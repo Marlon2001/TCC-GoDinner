@@ -7,7 +7,7 @@ class MenuPrincipal extends Component{
     render(){
         return(
             <Fragment>
-                <nav className="navbar navbar-expand-lg navbar-light navbar-color">
+                <nav className="navbar navbar-expand-lg fixed-top navbar-light navbar-color">
                     <div className="container menu-container">
                         <div className="row">
                             <div className="col-md-9 col-9">
