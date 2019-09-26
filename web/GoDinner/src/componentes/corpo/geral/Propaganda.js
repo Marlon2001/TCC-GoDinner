@@ -4,6 +4,7 @@ class Propaganda extends Component{
     render(){
         return(
             <Fragment>
+                {/* Bloco para de apresentação para se cadastrar na GoDinner */}
                 <div className="container mt-5">
                     <div className="row">
                         <div className="col-md-12">

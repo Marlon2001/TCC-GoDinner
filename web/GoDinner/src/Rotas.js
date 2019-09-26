@@ -32,7 +32,7 @@ export class RotaSetaCadastro extends Component {
                         <Route path="/endereco" component={FormularioEndereco} />
                         
                     </Switch>
-                </ BrowserRouter>                
+                </BrowserRouter>                
            </Fragment>
         )
     }
