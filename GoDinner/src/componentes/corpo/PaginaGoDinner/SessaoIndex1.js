@@ -1,6 +1,6 @@
 import React,{Component, Fragment} from 'react';
-import Propaganda from './geral/Propaganda';
-import { SliderBox } from '../globais/Slider';
+import Propaganda from '../geral/Propaganda';
+import { SliderBox } from '../../globais/Slider';
 
 class SessaoIndex1 extends Component{
     render(){

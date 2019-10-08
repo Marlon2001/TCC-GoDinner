@@ -1,7 +1,7 @@
 import React,{Fragment, Component} from 'react';
-import IconeTempo from '../../recursos/icons/tempo.png';
-import IconeQualidade from '../../recursos/icons/qualidade.png';
-import IconeSimples from '../../recursos/icons/simples.png';
+import IconeTempo from '../../../recursos/icons/tempo.png';
+import IconeQualidade from '../../../recursos/icons/qualidade.png';
+import IconeSimples from '../../../recursos/icons/simples.png';
 
 class  SessaoIndex3 extends Component{
     render(){

@@ -7,11 +7,13 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import './recursos/css/style.css';
 import 'popper.js/dist/popper.min.js';
 import './recursos/css/style.css';
+import {PaginaLogin} from './paginas/PaginaLogin';
 
 function App() {
   return (
-    <PaginaInicial/>
+    //<PaginaInicial/>
     //<PaginaQuemSomos/>
+    <PaginaLogin/>
   );
 }
 

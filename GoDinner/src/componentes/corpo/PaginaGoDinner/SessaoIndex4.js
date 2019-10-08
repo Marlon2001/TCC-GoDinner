@@ -1,6 +1,6 @@
 import React,{Component, Fragment} from 'react';
-import Android from '../../recursos/icons/android.png';
-import FotoCelular from '../../recursos/imgs/fotoCelular.png';
+import Android from '../../../recursos/icons/android.png';
+import FotoCelular from '../../../recursos/imgs/fotoCelular.png';
 
 class SessaoIndex4 extends Component{
     render(){

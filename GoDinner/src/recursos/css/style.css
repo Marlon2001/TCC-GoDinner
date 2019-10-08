@@ -1,6 +1,14 @@
-body{
-    background-color: #F9F7F7;
+
+
+
+
+textarea:focus, input:focus, select:focus, a:focus {
+    border-color: none !important;
+    outline: 0;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }
+
 /*  FORMATAÇÃO GLOBAL */
 a:link, a:visited {
 	text-decoration: none;
@@ -109,15 +117,16 @@ a{
 .btn-orange, .btn-orange a:link, 
 .btn-orange  a:visited{
     background: #ffffff;
-    color: #F26B3A;  
+    color: #F26B3A; 
+    border: 1px solid #F26B3A  
 }
 
 .btn-orange:hover,.btn-orange a:hover,
 .btn-orange a:active{
     
     border: 1px solid #F26B3A;
-    
-    color: #F26B3A;   
+    background: #F26B3A;
+    color: #ffffff ;   
 }
 
 
