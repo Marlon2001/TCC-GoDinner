@@ -8,12 +8,13 @@ import './recursos/css/style.css';
 import 'popper.js/dist/popper.min.js';
 import './recursos/css/style.css';
 import {PaginaLogin} from './paginas/PaginaLogin';
-
+import {PaginaListaRestaurante} from './paginas/PaginaListaRestaurante';
 function App() {
   return (
     //<PaginaInicial/>
     //<PaginaQuemSomos/>
-    <PaginaLogin/>
+    //<PaginaLogin/>
+    <PaginaListaRestaurante/>
   );
 }
 

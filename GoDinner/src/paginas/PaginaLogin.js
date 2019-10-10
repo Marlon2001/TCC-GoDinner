@@ -1,6 +1,4 @@
 import React,{Component, Fragment} from 'react';
-import Logo from '../recursos/icons/logo.png';
-import {Link} from 'react-router-dom';
 import {FormularioLogin} from '../componentes/formulario/FormularioLogin';
 import {DivHeader} from './style/style';
 

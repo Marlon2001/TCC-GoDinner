@@ -16,4 +16,9 @@ export const DivHeader = styled.div`
     width: 100%;
     height: 20px;
 `
-
+export const CorpoCemVh = styled.main`
+min-height: calc(100vh - 250px) !important;
+min-width: 50vh !important;
+padding: 0 10%;
+margin-bottom: 50px;
+`
