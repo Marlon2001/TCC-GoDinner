@@ -23,21 +23,21 @@ class RodapePrincipal extends Component{
                                 </div>
                                 <div className="col-md-4 col-sm-4">
                                     <h6>Social</h6>
-                                    <img src={Facebook}className="icone-social"/>
-                                    <img src={Youtube} className="icone-social"/>
-                                    <img src={Twitter} className="icone-social"/>
-                                    <img src={Instagran} className="icone-social"/>
+                                    <img src={Facebook} alt="" className="icone-social"/>
+                                    <img src={Youtube} alt="" className="icone-social"/>
+                                    <img src={Twitter} alt="" className="icone-social"/>
+                                    <img src={Instagran} alt="" className="icone-social"/>
 
                                 </div>
                                 <div className="col-md-4 col-sm-4">
                                     <h6>Baixe nosso App</h6>
-                                    <img src={PlayStore} className="icone-app"/>
+                                    <img src={PlayStore} alt="" className="icone-app"/>
                                 </div>
                             </div>
                             <hr/>
                             <div className="row mt-5">
                                 <div className="col-md-3">
-                                    <img src={Logo} className="icone-app"/>
+                                    <img src={Logo} alt="" className="icone-app"/>
                                 </div>
                                 <div className="col-md-4">
                                     © Copyright 2019 - GoDinner - Todos os direitos reservados GoDinner com Agência de Restaurantes Online S.A.

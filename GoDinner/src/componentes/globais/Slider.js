@@ -1,4 +1,4 @@
-import React,{Component, Fragment} from 'react';
+import React,{Component} from 'react';
 import Fritas from './../../recursos/icons/iconsSlider/1.png';
 import Macarrao from './../../recursos/icons/iconsSlider/2.jpg';
 import Marmita from './../../recursos/icons/iconsSlider/3.jpg';

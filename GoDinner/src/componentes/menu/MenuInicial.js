@@ -12,7 +12,7 @@ class MenuPrincipal extends Component{
                         <div className="row">
                             <div className="col-md-9 col-9">
                                 <a className="navbar-brand " href="index.html">
-                                <img src={Logo}/>
+                                <img src={Logo} alt=""/>
                             </a>
                             </div>
                             <div className="col-m-3 col-3">
@@ -23,8 +23,8 @@ class MenuPrincipal extends Component{
                         </div>
                         <div className="collapse navbar-collapse" id="navbarSite" col-mf>
                             <ul className="navbar-nav ml-auto">
-                            <li className="nav-item"><a className="nav-link cadastre" href="#">Cadastre seu restaurante</a></li>
-                            <li className="nav-item "><a className="nav-link" href="#">Entrar</a></li> 
+                                <li className="nav-item"><a className="nav-link cadastre" href="#">Cadastre seu restaurante</a></li>
+                                <li className="nav-item "><a className="nav-link" href="#">Entrar</a></li> 
                             </ul>
                         </div>
                     </div>

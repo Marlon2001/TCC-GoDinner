@@ -1,5 +1,6 @@
 import React,{Component, Fragment} from 'react';
 import Prato from '../../../recursos/imgs/background_prato.png';
+
 class SessaoIndex2 extends Component{
     render(){
         return(
@@ -11,7 +12,7 @@ class SessaoIndex2 extends Component{
                             <p className="font-tamanho-26">Sua comida em casa com apenas alguns clicks</p>
                         </div>
                         <div className="col-7 imagem-esta-com-fome ">
-                            <img src={Prato} className="rounded float-right"/>
+                            <img src={Prato} alt="" className="rounded float-right"/>
                         </div>
                     </div>
                 </div>

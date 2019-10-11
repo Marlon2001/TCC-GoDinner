@@ -10,15 +10,15 @@ import Sessao3 from '../componentes/corpo/PaginaGoDinner/SessaoIndex3';
 export class PaginaInicial extends Component{
     render(){
         return(
-            <div>
-                <MenuInicial/>
-                <CabecalhoPrincipal/>
-                <Sessao1/>
-                <Sessao2/>
-                <Sessao3/>
-                <Sessao4/>
-                <RodapePrincipal/>
-            </div>
+                <Fragment>
+                    <MenuInicial/>
+                    <CabecalhoPrincipal/>
+                    <Sessao1/>
+                    <Sessao2/>
+                    <Sessao3/>
+                    <Sessao4/>
+                    <RodapePrincipal/>
+                </Fragment>
         )
     }
 }
