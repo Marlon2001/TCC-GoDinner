@@ -23,8 +23,7 @@ class MenuPrincipal extends Component{
                         </div>
                         <div className="collapse navbar-collapse" id="navbarSite" col-mf>
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item"><a className="nav-link cadastre" href="#">Cadastre seu restaurante</a></li>
-                                <li className="nav-item "><a className="nav-link" href="#">Entrar</a></li> 
+                                <li className="nav-item "><a className="nav-link" href="#">Entrar como restaurante</a></li> 
                             </ul>
                         </div>
                     </div>

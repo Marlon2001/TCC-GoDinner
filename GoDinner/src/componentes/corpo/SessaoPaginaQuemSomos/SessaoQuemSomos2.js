@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {Visao} from '../../../recursos/icons/visao.png';
-import {Qualidade} from '../../../recursos/icons/qualidade.png'
+import Visao from '../../../recursos/icons/visao.png';
+import Qualidade from '../../../recursos/icons/qualidade.png';
+import { Player } from 'video-react';
 
 
 export class SessaoQuemSomos2 extends Component{

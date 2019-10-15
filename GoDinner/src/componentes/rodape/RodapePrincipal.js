@@ -5,6 +5,7 @@ import Youtube from '../../recursos/icons/you.png';
 import Twitter from '../../recursos/icons/twi.png';
 import Instagran from '../../recursos/icons/inst.png';
 import PlayStore from '../../recursos/icons/play.png';
+import { Link } from 'react-router-dom';
 
 
 
@@ -17,7 +18,8 @@ class RodapePrincipal extends Component{
                             <div className="row mt-1">
                                 <div className="col-md-4 col-sm-4">
                                     <h6>GoDinner</h6>
-                                    <p><a href="quem-somos.html">Quem Somos</a></p>
+                                    <p><Link to="/quem-somos">Quem Somos</Link></p>
+                                    <p><Link to="/login-go-dinner">Entrar</Link></p>
                                     <p>Aviso da Privacidade</p>
                                     <p>Cadastre seu restaurante</p>
                                 </div>

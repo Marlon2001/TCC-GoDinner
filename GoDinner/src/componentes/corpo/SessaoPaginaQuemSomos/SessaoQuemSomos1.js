@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {QuemSomos} from '../../../recursos/imgs/background-a-go-dinner.jpg';
+import QuemSomos from '../../../recursos/imgs/background-a-go-dinner.jpg';
 
 
 export class SessaoQuemSomos1 extends Component{
