@@ -1,5 +1,5 @@
 import React,{Component, Fragment} from 'react';
-import {FormularioLogin} from '../componentes/formulario/FormularioLogin';
+import FormularioLogin from '../componentes/formulario/FormularioLogin';
 import {DivHeader} from './style/style';
 
 
