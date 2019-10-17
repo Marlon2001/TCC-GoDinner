@@ -1,1 +1,2 @@
-export const DOMINIO = "http://godinner.tk:8080";
+export const DOMINIO = "http://localhost:8080";
+export const TOKEN = localStorage.getItem('token');

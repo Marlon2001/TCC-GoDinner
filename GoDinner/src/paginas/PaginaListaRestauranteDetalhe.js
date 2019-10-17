@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Imagem from './../recursos/imgs/background_prato.png';
+import {DOMINIO, TOKEN} from '../link_config';
+import $ from 'jquery';
 
 
 
@@ -11,34 +13,33 @@ export class PaginaListaRestauranteDetalhe extends Component{
     constructor(props){
         super();
         this.state = {
-            restaurante:{
-
-            }
+            restaurante:[]
         }
     }
 
 
-    // visualizarRestaurante() {
+   componentDidMount() {
 
 
-    //     const url = `${DOMINIO}/categoriaproduto/${idProduto}`;
+        const url = `${DOMINIO}/restaurante/1`;
 
-    //     $.ajax({
-    //         url: url,
-    //         type: 'GET',
-    //         headers: { 'token': TOKEN },
-    //         success: function (resposta) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
 
-    //             this.setState({ listaCategoria: resposta });
+                this.setState(resposta);
+                console.log(resposta);
 
-    //         }.bind(this),
-    //         error: function (data) {
-    //             console.log('Erro:', data);
+            }.bind(this),
+            error: function (data) {
+                console.log('Erro:', data);
 
-    //         }
-    //     });
+            }
+        });
 
-    // }
+    }
 
 
     render(){
