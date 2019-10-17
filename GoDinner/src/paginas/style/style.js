@@ -22,3 +22,7 @@ min-width: 50vh !important;
 padding: 0 10%;
 margin-bottom: 50px;
 `
+
+export const Li = styled.li`
+    max-width: ${props => props.maxWidth}; 
+`

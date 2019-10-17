@@ -3,6 +3,7 @@ import FormularioLogin from '../componentes/formulario/FormularioLogin';
 import {DivHeader} from './style/style';
 
 
+
 export class PaginaLogin extends Component{
     render(){
         return(

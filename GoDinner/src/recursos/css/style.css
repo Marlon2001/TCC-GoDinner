@@ -1,7 +1,23 @@
 
 
 
+.border-bottom-laranja{
+    border: 1px #F26B3A solid;
+    background: #F26B3A;
+    color:#ffffff;
+}
 
+.w3-input{padding:8px;display:block;border:none;border-bottom:1px solid #ccc;width:100%}
+
+
+
+
+.border-bottom-laranja:hover{
+    border: 1px #F26B3A solid;
+    background: #ffffff;
+    color:#F26B3A;
+    transition: 1s;
+}
 textarea:focus, input:focus, select:focus, a:focus {
     border-color: none !important;
     outline: 0;

@@ -5,6 +5,8 @@ import {PaginaQuemSomos} from './paginas/PaginaQuemSomos'
 import {PaginaLogin} from './paginas/PaginaLogin';
 import {PaginaInicialAdm} from './paginas/PaginaInicialAdm';
 import {PaginaListaRestaurante} from './paginas/PaginaListaRestaurante';
+import {MenuAdm} from './componentes/menu/MenuAdm';
+import {RodapeAdm} from './componentes/rodape/RodapeAdm';
 import {PaginaListaRestauranteDetalhe} from './paginas/PaginaListaRestauranteDetalhe';
 
 export const estaAutenticado = () => localStorage.getItem("token") != null;
@@ -45,9 +47,11 @@ export class RotaPaginas extends Component {
 
                         <Route path="/administracao-godinner" render={({ match: { url } }) => (
                             <Fragment>
-                                <PrivateRoute path={`${url}/pagina-inicial-adm`} component={PaginaInicialAdm} exact />
+                                <MenuAdm/>
+                                <PrivateRoute path={`${url}`} component={PaginaInicialAdm} exact />
                                 <PrivateRoute path={`${url}/lista-restaurante`} component={PaginaListaRestaurante} />
-                                <PrivateRoute path={`${url}/lista-detalhe-resturante`} component={PaginaListaRestauranteDetalhe} />
+                                <PrivateRoute path={`${url}/lista-restaurante-detalhe`} component={PaginaListaRestauranteDetalhe} />
+                                <RodapeAdm/>
                             </Fragment>
 
                         )}
