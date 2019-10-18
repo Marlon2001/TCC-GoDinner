@@ -11,7 +11,7 @@ export class PaginaQuemSomos extends Component{
         return(
             <Fragment>
                 <MenuInicial/>
-                <CabecalhoPrincipal/>
+                <CabecalhoPrincipal  formatacao="pt-4 pb-4" titulo="Quem Somos" className="caixa-header-2" subtitulo="GoDinner - Conheça mais sobre nós"/>
                 <SessaoQuemSomos1/>
                 <SessaoQuemSomos2/>
                 <RodapePrincipal/>

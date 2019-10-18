@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import ItensListaRestaurante from '../componentes/lista/ItensListaRestautantes';
 import  {FormControl, FormGroup } from 'react-bootstrap';
-import {DOMINIO, TOKEN} from '../link_config';
+import {DOMINIO, TOKEN, DOMINIO_IMG} from '../link_config';
 import $ from 'jquery';
 
 export class PaginaListaRestaurante extends Component {
@@ -63,7 +63,7 @@ export class PaginaListaRestaurante extends Component {
                             <FormGroup>
                                 <FormControl as="select">
                                     <option> Filtrar por...</option>
-                                    <option>1</option>
+                                    <option>Mais bem avaliados</option>
                                 </FormControl>
                                     
                             </FormGroup>

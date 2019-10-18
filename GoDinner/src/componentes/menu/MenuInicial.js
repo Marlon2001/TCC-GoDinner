@@ -12,9 +12,9 @@ class MenuPrincipal extends Component{
                     <div className="container menu-container">
                         <div className="row">
                             <div className="col-md-9 col-9">
-                                <a className="navbar-brand " href="index.html">
-                                <img src={Logo} alt=""/>
-                            </a>
+                                <Link className="navbar-brand " to="/">
+                                    <img src={Logo} alt="Logo GoDinner"/>
+                                </Link>
                             </div>
                             <div className="col-m-3 col-3">
                                 <button className="navbar-toggler" type="buttom" data-toggle="collapse" data-target="#navbarSite">

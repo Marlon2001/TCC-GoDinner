@@ -50,7 +50,7 @@ export class RotaPaginas extends Component {
                                 <MenuAdm/>
                                 <PrivateRoute path={`${url}`} component={PaginaInicialAdm} exact />
                                 <PrivateRoute path={`${url}/lista-restaurante`} component={PaginaListaRestaurante} />
-                                <PrivateRoute path={`${url}/lista-restaurante-detalhe`} component={PaginaListaRestauranteDetalhe} />
+                                <PrivateRoute path={`${url}/lista-restaurante-detalhe/:id?`} component={PaginaListaRestauranteDetalhe} />
                                 {/* <RodapeAdm/> */}
                             </Fragment>
 

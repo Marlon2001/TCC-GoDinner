@@ -11,8 +11,8 @@ export class PaginaInicial extends Component{
     render(){
         return(
                 <Fragment>
-                    <MenuInicial/>
-                    <CabecalhoPrincipal/>
+                    <MenuInicial />
+                    <CabecalhoPrincipal className="caixa-header" titulo="Quem está com fome pede na GoDinner" subtitulo="Depois espere e relaxe"/>
                     <Sessao1/>
                     <Sessao2/>
                     <Sessao3/>

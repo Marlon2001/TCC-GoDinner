@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Imagem from './../recursos/imgs/background_prato.png';
-import {DOMINIO, TOKEN} from '../link_config';
+import {DOMINIO, TOKEN, DOMINIO_IMG, FOTORESTAURANTEPADRAO} from '../link_config';
 import $ from 'jquery';
 
 
@@ -18,8 +18,10 @@ export class PaginaListaRestauranteDetalhe extends Component{
                 cnpj: '',
                 razaoSocial: '',
                 telefone: '',
-                
+                criacao: '',
+                foto:'',
                 endereco:{
+                    
                     bairro: '',
                     numero:'',
                     complemento: '',
@@ -35,15 +37,26 @@ export class PaginaListaRestauranteDetalhe extends Component{
                     }
 
                 }
-            }
+            },
+
+
+            categoria:[]
         }   
     }
 
 
    componentDidMount() {
+        this.carregarCategoria();
+        this.carregarDadosRestaurante();
+       
+    }
+
+    carregarCategoria(){
+
+        const { id } = this.props.match.params;
 
 
-        const url = `${DOMINIO}/restaurante/1`;
+        const url = `${DOMINIO}/restaurante/${id}`;
 
         $.ajax({
             url: url,
@@ -52,6 +65,37 @@ export class PaginaListaRestauranteDetalhe extends Component{
             success: function (resposta) {
 
                 this.setState({restaurante:resposta});
+                console.log(resposta);
+                console.log("FOTOO" + resposta.foto.length)
+                if (resposta.foto.length == 0) {
+                    $(".foto-restaurante").attr("src", FOTORESTAURANTEPADRAO);
+                } else {
+                    $(".foto-restaurante").attr("src", DOMINIO_IMG + resposta.foto);
+                }
+
+            }.bind(this),
+            error: function (data) {
+                console.log('Erro:', data);
+
+            }
+        });
+
+    }
+
+    carregarDadosRestaurante(){
+
+        const { id } = this.props.match.params;
+
+
+        const url = `${DOMINIO}/categoriaproduto/categorias/${id}`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({categoria:resposta});
                 console.log(resposta);
 
 
@@ -71,74 +115,84 @@ export class PaginaListaRestauranteDetalhe extends Component{
                 <h1 class="mb-3 text-center mt-5">{this.state.restaurante.razaoSocial}</h1>
                 <hr/>
                 <div class="row mt-5">
-                    <div class="col-md-4">
+                    <div class="col-md-5">
                             <div class="row ml-0 mt-4">
-                                <img src={Imagem} style={{width: 100 + '%', height: 280 + 'px'}}/>
+                                <img  className="foto-restaurante"src='' style={{width: 100 + '%', height: 300 + 'px'}} alt={'Restaurante '+this.state.restaurante.razaoSocial}/>
                             </div>
                             <div class="row mt-4 ">
                                 <div class="col-12">
-                                    <p>Devendo: </p>
-                                    <p>Lucro: R$</p>
-                                    <p>Total de vendas</p>
-                                    <p>Avaliação</p>
-                                    <p>Categorias vendidas:</p>
+                                    <h6 className="mt-2">Devendo: </h6>
+                                    <h6 className="mt-2">Lucro: R$</h6>
+                                    <h6 className="mt-2">Total de vendas</h6>
+                                    <h6 className="mt-2">Avaliação</h6>
+                                    <div className="row mb-5">
+                                        <div className="col-3 mt-2 h6">Categorias:</div>
+                                        {this.state.categoria.map(item => (
+                                            <div className="col-4 float-left border rounded ml-1 mt-1 mr-1">
+                                                 <div key={item.id} value={item.id}>
+                                                    {item.nome}
+                                                </div>
+                                            </div>
+                                        ))}
+                                       
+                                    </div>
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md-7 ml-5">
+                    <div class="col-md-6 ml-5">
                         <div class="row">
                             <div class="col-md-6  mt-1">
-                                <label>CNPJ:</label>
+                                <label className="h6">CNPJ:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.cnpj}/>
                             </div>
                             <div class="col-md-6  mt-1">
-                                <label>Razão Social:</label>
+                                <label className="h6">Razão Social:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.razaoSocial}/>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <label>E-mail:</label>
+                                <label className="h6">E-mail:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.email}/>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <label>Endereço:</label>
+                                <label className="h6">Endereço:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.logradouro}/>
                             </div>
                             <div class="col-md-6  mt-3">
-                                <label>Numero:</label>
+                                <label className="h6">Numero:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.numero}/>
                             </div>
                             <div class="col-md-6  mt-3">
-                                <label>Bairro:</label>
+                                <label className="h6">Bairro:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.bairro}/>
                             </div>
                             <div class="col-md-6  mt-3">
-                                <label>Cidade:</label>
+                                <label className="h6">Cidade:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cidade.cidade}/>
                             </div>
                             
                             <div class="col-md-6  mt-3">
-                                <label>Estado:</label>
+                                <label className="h6">Estado:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cidade.estado.estado}/>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <label>Complemento:</label>
+                                <label className="h6">Complemento:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.complemento}/>
                             </div>
                             <div class="col-md-12 mt-3">
-                                <label>Referência:</label>
+                                <label className="h6">Referência:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.referencia}/>
                             </div>
                             <div class="col-md-6  mt-3">
-                                <label>CEP:</label>
+                                <label className="h6">CEP:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cep}/>
                             </div>
                             <div class="col-md-6  mt-3">
-                                <label>Telefone:</label>
+                                <label className="h6">Telefone:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.telefone}/>
                             </div>
                             <div class="col-md-6 mt-3">
-                                <label>Dt. Criação:</label>
-                                <input class="w3-input" readonly="readonly"/>
+                                <label className="h6">Dt. Criação:</label> 
+                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.criacao}/>
                             </div>
                         </div>  
                     </div>

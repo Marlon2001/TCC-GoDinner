@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 
 class ItensListaRestaurante extends Component{
@@ -15,6 +16,7 @@ class ItensListaRestaurante extends Component{
 
     render() {
         return (
+            
             <div class="row">
                 <div class="col-3" >
                     <img src="img/background.jpg" style={{width: 100 + '%' , height: 150 + 'px'}} className="m-3"/>
@@ -33,11 +35,14 @@ class ItensListaRestaurante extends Component{
                         <div class="col-md-5 ml-1">Total de vendas:</div>
                         <div class="col-md-4">Lucro: R$</div>
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-outline-success">Detalhes</button>
+                            <Link to={`/administracao-godinner/lista-restaurante-detalhe/${this.state.item.id}`}>
+                                <span class="btn btn-outline-success">Detalhes</span>
+                            </Link>
                         </div>        
                     </div>
                 </div>
             </div>
+            
         )
     }
 }
