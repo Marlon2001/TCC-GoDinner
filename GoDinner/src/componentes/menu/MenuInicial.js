@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import Logo from '../../recursos/icons/logo.png';
+import {Link} from 'react-router-dom'
 
 /**Caixa da nav Bar */
 
@@ -23,7 +24,10 @@ class MenuPrincipal extends Component{
                         </div>
                         <div className="collapse navbar-collapse" id="navbarSite" col-mf>
                             <ul className="navbar-nav ml-auto">
-                                <li className="nav-item "><a className="nav-link" href="#">Entrar como restaurante</a></li> 
+                                <Link to="restaurante.godinner.tk">
+                                    <li className="nav-item ">Entrar como restaurante</li>
+                                </Link>
+                                 
                             </ul>
                         </div>
                     </div>
