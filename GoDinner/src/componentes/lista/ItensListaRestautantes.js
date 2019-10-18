@@ -1,9 +1,18 @@
-
 import React, { Component } from 'react';
 
 
 class ItensListaRestaurante extends Component{
  
+    constructor(props){
+        super();
+
+        this.state = {item: props.item}
+
+    }
+
+
+
+
     render() {
         return (
             <div class="row">
@@ -13,7 +22,7 @@ class ItensListaRestaurante extends Component{
                 <div class="col-9">
                     <div class="row">
                         <div class="col-md-9 mt-3 ml-2 ">
-                            <h3>Adega Corujão</h3>
+                            <h3>{this.state.item.razaoSocial}</h3>
                         </div>
                         <div class="col-md-2  mt-3 ">
                             <img src="img/icone/verde.png" class="rounded"/>

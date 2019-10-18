@@ -1,12 +1,50 @@
 import React, { Fragment, Component } from 'react';
 import ItensListaRestaurante from '../componentes/lista/ItensListaRestautantes';
 import  {FormControl, FormGroup } from 'react-bootstrap';
+import {DOMINIO, TOKEN} from '../link_config';
+import $ from 'jquery';
+
 export class PaginaListaRestaurante extends Component {
 
-  
+    constructor() {
+        super();
+        this.state = {
+            itens: []
+        }
+
+    }
+    visualizarRestaurante(){
+
+        this.setState({ itens: [] });
+
+        
+
+        $.ajax({
+            url: `${DOMINIO}/restaurante`,
+            type: 'GET',
+            headers: { "token": TOKEN },
+            // dataType: 'json',
+            contentType: 'application/json',
+            
+            success: function (resposta) {
+
+                this.setState({ itens: resposta });
+
+            }.bind(this),
+            error: function (data) {
+
+                console.log(data)
+            }
+        });
+    }
+
+    componentDidMount() {
+       
+        this.visualizarRestaurante();
+    }
+
+
     render() {
-
-
         return (
             <Fragment>
                 <div class=" container">
@@ -37,9 +75,11 @@ export class PaginaListaRestaurante extends Component {
                         <span class="col-1 ml-5"> Destivados</span>
                     </div>
                     <hr/>
-                    <div class="card">
-                        <ItensListaRestaurante/>
-                    </div>
+                    {this.state.itens.map(item => (
+                        <div class="card mb-5 mt-5">
+                            <ItensListaRestaurante item={item || ""}/>
+                        </div>
+                    ))}
                 </div>
             </Fragment>
         
