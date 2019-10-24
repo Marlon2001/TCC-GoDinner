@@ -5,7 +5,7 @@ import {DOMINIO} from '../../link_config';
 import $ from 'jquery';
 import PropTypes from "prop-types";
 import { ToastContainer} from 'react-toastify';
-import { ERRO, Notificacao, INFO, AVISO, PADRAO, CAMPO_VAZIO, INFORMACAO_INVALIDA} from '../../Alert/Alert';
+import { ERRO, Notificacao,CAMPO_VAZIO, INFORMACAO_INVALIDA} from '../../Alert/Alert';
 
 const initialState ={
     funcionario: {
@@ -52,7 +52,7 @@ class FormularioLogin extends Component{
 
     enviaFormulario() {
         
-        const funcionario = { ...this.state.funcionario }
+        // const funcionario = { ...this.state.funcionario }
 
         const url = `${DOMINIO}/login/funcionarios`;
 
@@ -69,7 +69,7 @@ class FormularioLogin extends Component{
 
             success: function (resposta) {
                 
-                if(!resposta == false){
+                if(!resposta === false){
 
                     localStorage.setItem(TOKEN_KEY, resposta.token);
                     this.props.history.push("/administracao-godinner/pagina-inicial-adm");
@@ -106,7 +106,7 @@ class FormularioLogin extends Component{
                     <div class="col-10  col-md-8 col-lg-6">
                         {/* <!--Div de logo e boas vindas--> */}
                         <div class="row">
-                            <img src={Logo} class=" col-12 icone-imagem"/>
+                            <img src={Logo} class=" col-12 icone-imagem" alt="Logo GoDinner"/>
                         </div>
                         <div class="row">
                             <h3 class="mx-auto">Sistema GoDinner</h3>

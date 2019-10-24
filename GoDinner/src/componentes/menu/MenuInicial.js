@@ -5,11 +5,18 @@ import {Link} from 'react-router-dom'
 /**Caixa da nav Bar */
 
 class MenuPrincipal extends Component{
+
+    handleClick() {
+        // do something meaningful, Promises, if/else, whatever, and then
+        window.location.assign('//restaurante.godinner.tk');
+      }
+    
+
     render(){
         return(
             <Fragment>
                 <nav className="navbar navbar-expand-lg fixed-top navbar-light navbar-color">
-                    <div className="container menu-container">
+                    <div className="container">
                         <div className="row">
                             <div className="col-md-9 col-9">
                                 <Link className="navbar-brand " to="/">
@@ -22,12 +29,11 @@ class MenuPrincipal extends Component{
                                 </button>
                             </div>
                         </div>
-                        <div className="collapse navbar-collapse" id="navbarSite" col-mf>
+                        <div className="collapse navbar-collapse" id="navbarSite">
                             <ul className="navbar-nav ml-auto">
-                                <Link to="restaurante.godinner.tk">
+                                <span onClick={this.handleClick.bind(this)}>
                                     <li className="nav-item ">Entrar como restaurante</li>
-                                </Link>
-                                 
+                                </span>
                             </ul>
                         </div>
                     </div>

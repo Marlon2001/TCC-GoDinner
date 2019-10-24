@@ -32,6 +32,7 @@ export class MenuAdm extends Component {
                     console.log(JSON.stringify(resposta));
 
                 }.bind(this),
+                
                 error: function (data) {
                     console.log(data);
 
@@ -45,7 +46,7 @@ export class MenuAdm extends Component {
         return (
             <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{ zIndex: '1' }}>
                 <Link className="navbar-brand logo"  to="/administracao-godinner">
-                    <img src={Logo} style={{ maxWidth: '200px', marginTop: '-5px' }} />
+                    <img src={Logo} style={{ maxWidth: '200px', marginTop: '-5px' }} alt="Logo GoDinner" />
                 </Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                     <span className="navbar-toggler-icon"></span>
@@ -60,7 +61,7 @@ export class MenuAdm extends Component {
                     <form className="form-inline bg-light">
                         <div className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: 'rgb(76, 76, 76)' }}>
-                                <img className="border rounded-circle foto-restaurante  mr-1" src='' style={{ width: 65 + 'px', height: 60 + 'px' }} />
+                                <img className="border rounded-circle foto-restaurante  mr-1" src='' alt="" style={{ width: 65 + 'px', height: 60 + 'px' }} />
                             </Link>
                             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <Link className="dropdown-item" >Editar Perfil</Link>

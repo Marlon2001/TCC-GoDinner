@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import ItensListaRestaurante from '../componentes/lista/ItensListaRestautantes';
 import  {FormControl, FormGroup } from 'react-bootstrap';
-import {DOMINIO, TOKEN, DOMINIO_IMG} from '../link_config';
+import {DOMINIO, TOKEN} from '../link_config';
 import $ from 'jquery';
 
 export class PaginaListaRestaurante extends Component {
@@ -55,7 +55,7 @@ export class PaginaListaRestaurante extends Component {
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Buscar por..." name="search"/>
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"> <img src=""/></button>
+                                    <button class="btn btn-default" type="submit"> <img src="" alt="" /></button>
                                 </div>
                             </div>
                         </div>

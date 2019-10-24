@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Imagem from './../recursos/imgs/background_prato.png';
 import {DOMINIO, TOKEN, DOMINIO_IMG, FOTORESTAURANTEPADRAO} from '../link_config';
 import $ from 'jquery';
 
@@ -27,7 +26,6 @@ export class PaginaListaRestauranteDetalhe extends Component{
                     complemento: '',
                     referencia: '',
                     cep: '',
-                    numero: '',
                     logradouro: '',
                     cidade:{
                         cidade:'',
@@ -67,7 +65,7 @@ export class PaginaListaRestauranteDetalhe extends Component{
                 this.setState({restaurante:resposta});
                 console.log(resposta);
                 console.log("FOTOO" + resposta.foto.length)
-                if (resposta.foto.length == 0) {
+                if (resposta.foto.length === 0) {
                     $(".foto-restaurante").attr("src", FOTORESTAURANTEPADRAO);
                 } else {
                     $(".foto-restaurante").attr("src", DOMINIO_IMG + resposta.foto);

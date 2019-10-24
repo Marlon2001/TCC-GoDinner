@@ -8,12 +8,12 @@ class SessaoIndex4 extends Component{
             <Fragment>
                 <div className="container mt-5">
                     <div className="row">
-                        <div className="col-5 ">
+                        <div className="col-12 col-md-5 col-lg-5">
                             <h3 className="font-tamanho-42">Baixe o nosso App</h3>
                             <p className="font-tamanho-20">Não perca tempo. Baixe o nosso App. O primeiro pedido tem 50% de desconto</p>
-                            <img src={Android} alt="" className="icone-android"/>Android
+                            <img src={Android} alt="icone do Android" className="icone-android"/>
                         </div>
-                        <div className="col-7 imagem-esta-com-fome ">
+                        <div className="col-sm-12 col-md-7 col-lg-7 imagem-esta-com-fome ">
                             <img src={FotoCelular} alt=""  className="rounded float-right"/>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ class ItensListaRestaurante extends Component{
             
             <div class="row">
                 <div class="col-3" >
-                    <img src="img/background.jpg" style={{width: 100 + '%' , height: 150 + 'px'}} className="m-3"/>
+                    <img src="img/background.jpg" alt="" style={{width: 100 + '%' , height: 150 + 'px'}} className="m-3"/>
                 </div>
                 <div class="col-9">
                     <div class="row">
@@ -27,7 +27,7 @@ class ItensListaRestaurante extends Component{
                             <h3>{this.state.item.razaoSocial}</h3>
                         </div>
                         <div class="col-md-2  mt-3 ">
-                            <img src="img/icone/verde.png" class="rounded"/>
+                            <img src="img/icone/verde.png" class="rounded" alt=""/>
                             <span class="ml-1">Débito</span>
                         </div>
                     </div>

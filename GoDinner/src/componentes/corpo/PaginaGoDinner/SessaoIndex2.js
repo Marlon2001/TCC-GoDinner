@@ -2,6 +2,9 @@ import React,{Component, Fragment} from 'react';
 import Prato from '../../../recursos/imgs/background_prato.png';
 
 class SessaoIndex2 extends Component{
+
+    
+
     render(){
         return(
             <Fragment>

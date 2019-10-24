@@ -1,6 +1,5 @@
 
 
-
 .border-bottom-laranja{
     border: 1px #F26B3A solid;
     background: #F26B3A;
@@ -89,8 +88,9 @@ a{
 
 
 .tamanho_imagem{
-    width: 70%;
+    width: 70%; 
     height: 70%;
+    box-shadow: 10px 10px 41px -21px rgba(0,0,0,0.75);
 }
 
 .menu-container{
@@ -110,8 +110,8 @@ a{
     
     background-image: url(../imgs/background-go-dinner-header.jpg); 
     background-size: cover;
-    height: 600px;
-    margin-top:120px;
+    height: 450px;
+    margin-top:100px;
     background-repeat: no-repeat;
 }
 .lead-formatacao{
@@ -136,7 +136,6 @@ a{
 .background-card{
     background-color: rgb(247, 67, 2);
     box-shadow: 10px 10px 41px -21px rgba(0,0,0,0.75);
-    border-radius: 10px;
 }
 
 /*FORMATAÇÃO DO BOTÃO*/
@@ -232,8 +231,52 @@ a{
 
 
 .transparente{
-    background-color: #ffffffa9;
+    background-color: #ffffffb4;
     box-shadow: 10px 10px 41px -21px rgba(0,0,0,0.75);
 }
 
 
+
+@media screen and (max-width: 800px) {
+    .display-4-formatacao{
+        font-size: 42px;
+    }
+
+    .card-title{
+        font-size: 33px;
+        
+    }
+
+    .font-tamanho-23, .font-tamanho-42{
+        font-size:23px;
+    }
+
+    .lead-formatacao, .card-text{
+        font-size: 20px;
+    }
+
+    .btn-orange, .font-tamanho-26, .font-tamanho-20{
+        font-size: 16px;
+    }
+    
+    .jumbotron{
+        height: 400px;
+    }
+
+    .jumbotron-2{
+        height: 200px;
+    }
+
+    .icone-android{
+        height: 80px;
+        width: 70px;
+    }
+    .jumbotron-3{
+        height: 900px;
+    }
+
+    .imagem-quem-somos{
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -16,19 +16,19 @@ import Carne from './../../recursos/icons/iconsSlider/6.jpg';
                 <div className={`carousel-item ${this.props.className}`}>
                     <div className="row">
                         <div className="col-3">
-                            <img class="d-block w-100 rounded-circle tamanho_imagem" src={this.props.imagem1} alt="Primeiro Slide"/>
+                            <img className="d-block w-100 rounded-circle tamanho_imagem" src={this.props.imagem1} alt="Primeiro Slide"/>
                             <p className="text-center">{this.props.titulo1}</p>
                         </div>
                         <div className="col-3 tamanho_imagem_div">
-                            <img class="d-block w-100 rounded-circle tamanho_imagem" src={this.props.imagem2} alt="Primeiro Slide"/>
+                            <img className="d-block w-100 rounded-circle tamanho_imagem" src={this.props.imagem2} alt="Primeiro Slide"/>
                             <p className="text-center">{this.props.titulo2}</p>
                         </div>
                         <div className="col-3">
-                            <img class="d-block w-100 rounded-circle tamanho_imagem" src={this.props.imagem3} alt="Primeiro Slide"/>
+                            <img className="d-block w-100 rounded-circle tamanho_imagem" src={this.props.imagem3} alt="Primeiro Slide"/>
                             <p className="text-center">{this.props.titulo3}</p>
                         </div>
                         <div className="col-3">
-                            <img class="d-block w-100 rounded-circle tamanho_imagem" src={this.props.imagem4} alt="Primeiro Slide"/>
+                            <img className="d-block w-100 rounded-circle tamanho_imagem" src={this.props.imagem4} alt="Primeiro Slide"/>
                             <p className="text-center">{this.props.titulo4}</p>
                         </div>
                     </div>
@@ -43,8 +43,8 @@ export class SliderBox extends Component{
         return(
             <div className="container mt-5">
                 <h4 className="font-tamanho-23">Para todos os tipos de gostos</h4>
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
+                <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+                    <div className="carousel-inner">
                         <ImagemSlider
                             className="active"
                             imagem1={Carne}
