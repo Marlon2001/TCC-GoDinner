@@ -9,7 +9,8 @@ export class PaginaListaRestaurante extends Component {
     constructor() {
         super();
         this.state = {
-            itens: []
+            itens: [],
+            foto: ''
         }
 
     }
@@ -28,7 +29,7 @@ export class PaginaListaRestaurante extends Component {
             
             success: function (resposta) {
 
-                this.setState({ itens: resposta });
+                this.setState({ itens: resposta, foto: resposta.foto });
 
             }.bind(this),
             error: function (data) {
@@ -77,7 +78,7 @@ export class PaginaListaRestaurante extends Component {
                     <hr/>
                     {this.state.itens.map(item => (
                         <div class="card mb-5 mt-5">
-                            <ItensListaRestaurante item={item || ""}/>
+                            <ItensListaRestaurante foto={item.foto} item={item || ""}/>
                         </div>
                     ))}
                 </div>

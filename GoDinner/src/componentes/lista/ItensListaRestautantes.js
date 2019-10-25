@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+import {DOMINIO_IMG} from '../../link_config';
+
 
 
 class ItensListaRestaurante extends Component{
@@ -15,11 +17,10 @@ class ItensListaRestaurante extends Component{
 
 
     render() {
-        return (
-            
+        return (            
             <div class="row">
                 <div class="col-3" >
-                    <img src="img/background.jpg" alt="" style={{width: 100 + '%' , height: 150 + 'px'}} className="m-3"/>
+                    <img src={ `${DOMINIO_IMG}${this.state.item.foto}`} alt="" style={{width: 100 + '%' , height: 150 + 'px'}} className="m-3"/>
                 </div>
                 <div class="col-9">
                     <div class="row">
@@ -31,7 +32,7 @@ class ItensListaRestaurante extends Component{
                             <span class="ml-1">Débito</span>
                         </div>
                     </div>
-                    <div class="row mt-5">
+                    <div class="row mt-5 mb-3">
                         <div class="col-md-5 ml-1">Total de vendas:</div>
                         <div class="col-md-4">Lucro: R$</div>
                         <div class="col-md-2">

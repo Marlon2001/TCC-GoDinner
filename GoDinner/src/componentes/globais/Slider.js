@@ -5,9 +5,9 @@ import Marmita from './../../recursos/icons/iconsSlider/3.jpg';
 import Japonesa from './../../recursos/icons/iconsSlider/4.jpg';
 import Conserva from'./../../recursos/icons/iconsSlider/5.jpg';
 import Carne from './../../recursos/icons/iconsSlider/6.jpg';
+
 import $ from 'jquery';
 import {DOMINIO, TOKEN} from '../../link_config';
-
 
 
 
@@ -41,116 +41,116 @@ import {DOMINIO, TOKEN} from '../../link_config';
 
 
 export class SliderBox extends Component{
-    // constructor(props) {
-    //     super();
-    //     this.state = {
+    constructor(props) {
+        super();
+        this.state = {
 
-    //         categoria: {
-    //            nome: '',
-    //            foto:'',
-    //            descricao:''
-    //         },
+            categoria: {
+               nome: '',
+               foto:'',
+               descricao:''
+            },
 
-    //         categorias: [],
+            categorias: []
 
-    //         listaCategoria: []
+        }
+    }
 
-    //     }
-    // }
+    componentDidMount() {
+        const url = `${DOMINIO}/categoria`;
 
-    // componentWillMount() {
-    //     this.visualizarCategoriaSalva();
-    // }
+        $.ajax({
+            url: url,
+            headers: { 'token': TOKEN },
+            type: 'GET',
+            success: function (resposta) {
+                console.log(resposta[0].nome)
+                console.log(this.setState({ categorias: resposta }));
+                console.log(this.state.categorias);
 
-    // visualizarCategoriaSalva() {
-
-
-    //     const url = `${DOMINIO}/categoriaproduto/${idProduto}`;
-
-    //     $.ajax({
-    //         url: url,
-    //         type: 'GET',
-    //         headers: { 'token': TOKEN },
-    //         success: function (resposta) {
-
-    //             this.setState({ listaCategoria: resposta });
-
-    //         }.bind(this),
-    //         error: function (data) {
-    //             console.log('Erro:', data);
-
-    //         }
-    //     });
-
-    // }
-
-    // enviaCategoria() {
-
-    //     const idProduto = this.props.idProduto;
-    //     const idCategoria = document.getElementById("sql_categoria").value
-    //     var categoriaNome = { ...this.state.categoriaproduto };
-    //     categoriaNome.categoria = { "id": idCategoria }
-    //     categoriaNome.produto = { "id": idProduto }
-
-    //     const url = `${DOMINIO}/categoriaproduto`;
-
-    //     $.ajax({
-
-    //         url: url,
-    //         contentType: "application/json",
-    //         dataType: 'json',
-    //         headers: { 'token': TOKEN },
-    //         type: 'POST',
-    //         data: JSON.stringify(categoriaNome),
-
-
-
-    //         success: function (resposta) {
-
-    //             if (resposta.length >= 5) {
-    //                 $("#salvar-categoria").prop('disabled', true);
-    //             } else {
-    //                 $("#salvar-categoria").prop('disabled', false);
-    //             }
-
-    //            this.visualizarCategoriaSalva();
-
-    //         }.bind(this),
-    //         error: function (data) {
-
-    //             console.log(JSON.stringify(categoriaNome));
-
-    //         }
-    //     });
-    // }
-
-    // componentDidMount() {
-    //     const idProduto = this.props.idProduto;
-    //     const url = `${DOMINIO}/categoria`;
-
-    //     $.ajax({
-    //         url: url,
-    //         headers: { 'token': TOKEN },
-    //         type: 'GET',
-    //         success: function (resposta) {
-    //             console.log(resposta[0].nome)
-    //             console.log(this.setState({ categorias: resposta }));
-    //             console.log(this.state.categorias);
-
-    //         }.bind(this),
-    //         error: function (resposta) {
-    //             console.log(resposta)
-    //         }
-    //     });
-    // }
+            }.bind(this),
+            error: function (resposta) {
+                console.log(resposta)
+            }
+        });
+    }
 
 
     render(){
+          
         return(
             <div className="container mt-5">
                 <h4 className="font-tamanho-23">Para todos os tipos de gostos</h4>
                 <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
-                    <div className="carousel-inner">
+
+                     {/* <InfiniteCarousel
+                        breakpoints={[
+                        {
+                            breakpoint: 500,
+                            settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            },
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            },
+                        },
+                        ]}
+                        dots={true}
+                        showSides={true}
+                        sidesOpacity={.5}
+                        sideSize={.1}
+                        slidesToScroll={4}
+                        slidesToShow={4}
+                        scrollOnDevice={true}
+                    >
+
+                        
+                        <div>
+                            {this.state.categorias.map(item => (
+                 
+                                    <div key={item.foto}>
+                                        <div>
+                                            <img src={item.foto}/>
+                                        </div>
+                                        
+                                    </div>
+                                
+                            ))}
+                                        <div>
+                                            <img src={Carne}/>
+                                        </div>
+                        </div>
+
+
+                        
+                    </InfiniteCarousel> 
+
+                    {this.state.categorias.map(item => (
+                 
+                 <div key={item.foto}>
+                     <div>
+                         <img src={item.foto}/>
+                     </div>
+                     
+                 </div>
+             
+         ))} */}
+
+                    {/* {this.state.categorias.map(item => (
+                                <div>
+                                    <div key={item.foto}>
+                                        <img src={Carne}/>
+                                    </div>
+                                </div>
+                                
+                            ))} */}
+  
+                    {/* <div className="carousel-inner">
                         <ImagemSlider
                             className="active"
                             imagem1={Carne}
@@ -174,7 +174,8 @@ export class SliderBox extends Component{
                         />
 
 
-                    </div>
+                    </div> */}
+
                     <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span className="sr-only">Anterior</span>
