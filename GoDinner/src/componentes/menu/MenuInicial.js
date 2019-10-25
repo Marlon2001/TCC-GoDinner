@@ -31,9 +31,12 @@ class MenuPrincipal extends Component{
                         </div>
                         <div className="collapse navbar-collapse" id="navbarSite">
                             <ul className="navbar-nav ml-auto">
-                                <span onClick={this.handleClick.bind(this)}>
-                                    <li className="nav-item ">Entrar como restaurante</li>
-                                </span>
+                                <Link to="/quem-somos">
+                                    <li className="nav-item link-menu">Quem Somos</li>
+                                </Link>
+                                <Link onClick={this.handleClick.bind(this)}>
+                                    <li className="nav-item link-menu">Entrar como restaurante</li>
+                                </Link>
                             </ul>
                         </div>
                     </div>

@@ -10,6 +10,12 @@ import { Link } from 'react-router-dom';
 
 
 class RodapePrincipal extends Component{
+
+    handleClick() {
+        // do something meaningful, Promises, if/else, whatever, and then
+        window.location.assign('//restaurante.godinner.tk');
+      }
+    
     render(){
         return(
             <Fragment>
@@ -20,8 +26,11 @@ class RodapePrincipal extends Component{
                                     <h6>GoDinner</h6>
                                     <p><Link to="/quem-somos">Quem Somos</Link></p>
                                     <p><Link to="/login-go-dinner">Entrar</Link></p>
-                                    <p>Aviso da Privacidade</p>
-                                    <p>Cadastre seu restaurante</p>
+                                    <p className="link-menu-2" >Aviso da Privacidade</p>
+                                    <Link onClick={this.handleClick.bind(this)}>
+                                        <p className="link-menu-2">Cadastre seu restaurante</p>
+                                    </Link>
+                                    
                                 </div>
                                 <div className="col-md-4 col-sm-4 mt-2 mb-2">
                                     <h6>Social</h6>
@@ -45,9 +54,9 @@ class RodapePrincipal extends Component{
                                     © Copyright 2019 - GoDinner - Todos os direitos reservados GoDinner com Agência de Restaurantes Online S.A.
                                     CNPJ 55.555.5555/5555-87 
                                 </div>
-                                <div className="col-md-2 mb-4"> Termos e condições de uso</div>
-                                <div className="col-md-1 mb-4">Privacidade</div>
-                                <div className="col-md-2 mb-4">Código de conduta</div>
+                                <div className="col-md-2 mb-4 link-menu-2"> Termos e condições de uso</div>
+                                <div className="col-md-1 mb-4 link-menu-2">Privacidade</div>
+                                <div className="col-md-2 mb-4 link-menu-2">Código de conduta</div>
                             </div>
                         </div>
                     </footer>

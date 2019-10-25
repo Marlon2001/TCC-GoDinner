@@ -235,7 +235,29 @@ a{
     box-shadow: 10px 10px 41px -21px rgba(0,0,0,0.75);
 }
 
+.link-menu{
+    color:#2D2D2C;
+    padding-left: 20px;
+    padding-bottom: 5px;
+}
 
+
+
+.link-menu:hover{
+    color:#F26B3A;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.link-menu-2{
+    color:#2D2D2C;
+}
+
+.link-menu-2:hover{
+    color:#F26B3A;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 800px) {
     .display-4-formatacao{
@@ -278,5 +300,17 @@ a{
     .imagem-quem-somos{
         width: 100px;
         height: 100px;
+    }
+
+    .link-menu, .link-menu-2{
+        color:#2D2D2C;
+        padding-left: 20px;
+        padding-bottom: 5px;
+    }
+    
+    
+    
+    .link-menu:hover , .link-menu-2:hover{
+        color:#2D2D2C;
     }
 }

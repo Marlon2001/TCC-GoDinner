@@ -5,6 +5,8 @@ import Marmita from './../../recursos/icons/iconsSlider/3.jpg';
 import Japonesa from './../../recursos/icons/iconsSlider/4.jpg';
 import Conserva from'./../../recursos/icons/iconsSlider/5.jpg';
 import Carne from './../../recursos/icons/iconsSlider/6.jpg';
+import $ from 'jquery';
+import {DOMINIO, TOKEN} from '../../link_config';
 
 
 
@@ -39,6 +41,110 @@ import Carne from './../../recursos/icons/iconsSlider/6.jpg';
 
 
 export class SliderBox extends Component{
+    // constructor(props) {
+    //     super();
+    //     this.state = {
+
+    //         categoria: {
+    //            nome: '',
+    //            foto:'',
+    //            descricao:''
+    //         },
+
+    //         categorias: [],
+
+    //         listaCategoria: []
+
+    //     }
+    // }
+
+    // componentWillMount() {
+    //     this.visualizarCategoriaSalva();
+    // }
+
+    // visualizarCategoriaSalva() {
+
+
+    //     const url = `${DOMINIO}/categoriaproduto/${idProduto}`;
+
+    //     $.ajax({
+    //         url: url,
+    //         type: 'GET',
+    //         headers: { 'token': TOKEN },
+    //         success: function (resposta) {
+
+    //             this.setState({ listaCategoria: resposta });
+
+    //         }.bind(this),
+    //         error: function (data) {
+    //             console.log('Erro:', data);
+
+    //         }
+    //     });
+
+    // }
+
+    // enviaCategoria() {
+
+    //     const idProduto = this.props.idProduto;
+    //     const idCategoria = document.getElementById("sql_categoria").value
+    //     var categoriaNome = { ...this.state.categoriaproduto };
+    //     categoriaNome.categoria = { "id": idCategoria }
+    //     categoriaNome.produto = { "id": idProduto }
+
+    //     const url = `${DOMINIO}/categoriaproduto`;
+
+    //     $.ajax({
+
+    //         url: url,
+    //         contentType: "application/json",
+    //         dataType: 'json',
+    //         headers: { 'token': TOKEN },
+    //         type: 'POST',
+    //         data: JSON.stringify(categoriaNome),
+
+
+
+    //         success: function (resposta) {
+
+    //             if (resposta.length >= 5) {
+    //                 $("#salvar-categoria").prop('disabled', true);
+    //             } else {
+    //                 $("#salvar-categoria").prop('disabled', false);
+    //             }
+
+    //            this.visualizarCategoriaSalva();
+
+    //         }.bind(this),
+    //         error: function (data) {
+
+    //             console.log(JSON.stringify(categoriaNome));
+
+    //         }
+    //     });
+    // }
+
+    // componentDidMount() {
+    //     const idProduto = this.props.idProduto;
+    //     const url = `${DOMINIO}/categoria`;
+
+    //     $.ajax({
+    //         url: url,
+    //         headers: { 'token': TOKEN },
+    //         type: 'GET',
+    //         success: function (resposta) {
+    //             console.log(resposta[0].nome)
+    //             console.log(this.setState({ categorias: resposta }));
+    //             console.log(this.state.categorias);
+
+    //         }.bind(this),
+    //         error: function (resposta) {
+    //             console.log(resposta)
+    //         }
+    //     });
+    // }
+
+
     render(){
         return(
             <div className="container mt-5">
