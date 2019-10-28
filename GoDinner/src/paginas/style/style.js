@@ -7,7 +7,9 @@ export const corDiv = theme('cor',{
     laranja: "#F26B3A",
     marrom: "#705348",
     verde: "#3D830B",
-    preto: "#2d2d2c"
+    preto: "#2d2d2c",
+    url: "http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/footer_lodyas.png"
+
 })
 
 
@@ -25,4 +27,7 @@ margin-bottom: 50px;
 
 export const Li = styled.li`
     max-width: ${props => props.maxWidth}; 
+`
+export const FundoMovimento = styled.body`
+    background:url(${corDiv});
 `
