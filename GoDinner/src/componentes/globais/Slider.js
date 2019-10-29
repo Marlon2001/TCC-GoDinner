@@ -26,7 +26,7 @@ export class SliderBox extends Component{
 
        
         $.ajax({
-            url: "http://localhost:8080/categoria",
+            url: url,
             type: 'GET',
             success: function (resposta) {
                 console.log(resposta[0].nome)
