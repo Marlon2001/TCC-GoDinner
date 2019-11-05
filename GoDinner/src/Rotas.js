@@ -42,7 +42,7 @@ export class RotaPaginas extends Component {
                             path="/quem-somos" component={PaginaQuemSomos}
                         />
 
-                        <Route path="/login-go-dinner" exact component={PaginaLogin}/>
+                        <Route path="/login" exact component={PaginaLogin}/>
 
 
                         <Route path="/administracao-godinner" render={({ match: { url } }) => (

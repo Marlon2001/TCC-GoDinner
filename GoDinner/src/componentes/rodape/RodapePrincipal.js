@@ -25,7 +25,7 @@ class RodapePrincipal extends Component{
                                 <div className="col-md-4 col-sm-4 mt-2 mb-2">
                                     <h6>GoDinner</h6>
                                     <p><Link to="/quem-somos">Quem Somos</Link></p>
-                                    <p><Link to="/login-go-dinner">Entrar</Link></p>
+                                    <p><Link to="/login">Entrar</Link></p>
                                     <p className="link-menu-2" >Aviso da Privacidade</p>
                                     <Link onClick={this.handleClick.bind(this)}>
                                         <p className="link-menu-2">Cadastre seu restaurante</p>

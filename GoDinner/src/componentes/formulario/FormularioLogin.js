@@ -72,7 +72,7 @@ class FormularioLogin extends Component{
                 if(!resposta === false){
 
                     localStorage.setItem(TOKEN_KEY, resposta.token);
-                    this.props.history.push("/administracao-godinner/pagina-inicial-adm");
+                    this.props.history.push("/administracao-godinner");
                 }else{
                     Notificacao(ERRO, INFORMACAO_INVALIDA)
                 }
