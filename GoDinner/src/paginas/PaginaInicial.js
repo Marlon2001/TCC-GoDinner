@@ -7,13 +7,18 @@ import Sessao3 from '../componentes/corpo/PaginaGoDinner/SessaoIndex3';
 import CabecalhoPrincipal from '../componentes/cabecalho/CabecalhoPrincipal';
 import RodapePrincipal from '../componentes/rodape/RodapePrincipal';
 import MenuInicial from '../componentes/menu/MenuInicial';
+import PageProgress from 'react-page-progress';
 
 
 export class PaginaInicial extends Component{
     render(){
         return(
+          
                 <Fragment>
+               
+               <PageProgress color={'#ff7700'} height={7}/>
                     <MenuInicial />
+                    
                     <CabecalhoPrincipal className="caixa-header" titulo="Quem está com fome pede na GoDinner" subtitulo="Depois espere e relaxe"/>
                     <Sessao1/>
                     <Sessao2/>
