@@ -6,14 +6,22 @@ export class SessaoQuemSomos1 extends Component{
     render(){
         return(
             // Apresentação da empresa GoDinner
-            <div class="container mt-5 mb-5">
-                <div class="row">
-                    <div class="col-md-5  col-12">
-                        <h3 class="font-tamanho-42">A GoDinner</h3>
-                        <p class="font-tamanho-20 text-justify">Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
-                    </div>
-                    <div class="col-md-7 col-12 imagem-esta-com-fome ">
-                        <img src={QuemSomos} alt="" class="rounded float-right"/>
+            <div className="container mt-5 mb-5">
+                <div className="row">
+                    <div className="col-md-5  col-12">
+                        <h3 className="font-tamanho-42">A GoDinner</h3>
+                        <p className="font-tamanho-20 text-justify">
+                            A plataforma GoDinner tem como objetivo auxiliar o consumidor a realizar 
+                            suas compras e também o restaurante a promover seu catálogo de produtos! 
+                        </p>
+                        <p className="font-tamanho-20 text-justify">
+                            O funcionamento da plataforma é bem simples! A um click o usuário vai conseguir escolher seu prato e realizar o pedido para 
+                            ser entregue em qualquer lugar para a janta ou qualquer refeição. Sendo totalmente gratuito o cadastro 
+                            e o uso da plataforma para o consumidor e o restaurante.
+                        </p>
+                    </div >
+                    <div className="col-md-7 col-12 imagem-esta-com-fome ">
+                        <img src={QuemSomos} alt="" className="rounded float-right"/>
                     </div>
                     
                 </div>

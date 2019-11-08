@@ -120,7 +120,7 @@ export class PaginaListaRestauranteDetalhe extends Component{
                             <div class="row mt-4 ">
                                 <div class="col-12">
                                     <h6 className="mt-2">Devendo: </h6>
-                                    <h6 className="mt-2">Lucro: R$</h6>
+                                    <h6 className="mt-2">Total: R$</h6>
                                     <h6 className="mt-2">Total de vendas</h6>
                                     <h6 className="mt-2">Avaliação</h6>
                                     <div className="row mb-5">
@@ -188,10 +188,10 @@ export class PaginaListaRestauranteDetalhe extends Component{
                                 <label className="h6">Telefone:</label>
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.telefone}/>
                             </div>
-                            <div class="col-md-6 mt-3">
+                            {/* <div class="col-md-6 mt-3">
                                 <label className="h6">Dt. Criação:</label> 
                                 <input class="w3-input" readonly="readonly" value={this.state.restaurante.criacao}/>
-                            </div>
+                            </div> */}
                         </div>  
                     </div>
                 </div>

@@ -15,20 +15,15 @@ class MenuPrincipal extends Component{
     render(){
         return(
             <Fragment>
-                <nav className="navbar navbar-expand-lg fixed-top navbar-light navbar-color">
+                <nav className="navbar navbar-expand-lg fixed-top navbar-light navbar-color" >
                     <div className="container">
-                        <div className="row">
-                            <div className="col-md-9 col-9">
                                 <Link className="navbar-brand " to="/">
                                     <img src={Logo} alt="Logo GoDinner"/>
                                 </Link>
-                            </div>
-                            <div className="col-m-3 col-3">
-                                <button className="navbar-toggler" type="buttom" data-toggle="collapse" data-target="#navbarSite">
+                                <button className="navbar-toggler ml-auto mr-3" type="buttom" data-toggle="collapse" data-target="#navbarSite">
                                     <span className="navbar-toggler-icon"></span>
                                 </button>
-                            </div>
-                        </div>
+                        <div className="row">
                         <div className="collapse navbar-collapse" id="navbarSite">
                             <ul className="navbar-nav ml-auto">
                                 <Link to="/quem-somos">
@@ -39,6 +34,8 @@ class MenuPrincipal extends Component{
                                 </Link>
                             </ul>
                         </div>
+                        </div>
+                       
                     </div>
                 </nav>
             </Fragment>

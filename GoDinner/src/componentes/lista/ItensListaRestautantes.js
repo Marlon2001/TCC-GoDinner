@@ -34,7 +34,7 @@ class ItensListaRestaurante extends Component{
                     </div>
                     <div class="row mt-5 mb-3">
                         <div class="col-md-5 ml-1">Total de vendas:</div>
-                        <div class="col-md-4">Lucro: R$</div>
+                        <div class="col-md-4">Total: R$</div>
                         <div class="col-md-2">
                             <Link to={`/administracao-godinner/lista-restaurante-detalhe/${this.state.item.id}`}>
                                 <span class="btn btn-outline-success">Detalhes</span>

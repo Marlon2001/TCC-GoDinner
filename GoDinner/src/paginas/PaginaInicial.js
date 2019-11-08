@@ -16,9 +16,11 @@ export class PaginaInicial extends Component{
           
                 <Fragment>
                
-               <PageProgress color={'#ff7700'} height={7}/>
+                
+                    <div className="z-index">
+                        <PageProgress color={'rgb(255, 26, 26)'} height={5}/>
+                    </div>
                     <MenuInicial />
-                    
                     <CabecalhoPrincipal className="caixa-header" titulo="Quem está com fome pede na GoDinner" subtitulo="Depois espere e relaxe"/>
                     <Sessao1/>
                     <Sessao2/>
