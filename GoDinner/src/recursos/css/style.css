@@ -86,10 +86,6 @@ a{
 }
 
 
-.z-index{
-    position: absolute;
-    z-index: 9999;
-}
 
 .tamanho_imagem{
     width: 70%; 

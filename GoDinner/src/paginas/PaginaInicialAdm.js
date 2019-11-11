@@ -1,6 +1,10 @@
 import React,{Component} from 'react';
 import { Card} from 'react-bootstrap';
-import { Line } from 'react-chartjs-2';
+import {
+    DivOpecoes, DivOpecoesTitulo, CabecalhoGraficos,
+    CorpoGraficos, IconeOpcoes
+} from './style/style';
+import { Bar, Line, Pie } from 'react-chartjs-2';
 
 
 
@@ -85,7 +89,7 @@ export class PaginaInicialAdm extends Component{
                             </div>
                             <div className="col-md-3  mb-2 col-6">
                                 <Card>
-                                    <Card.Header className="bg-danger text-white">Restaurantes cadastrados </Card.Header>
+                                    <Card.Header className="bg-danger text-white">Consumidores cadastrados</Card.Header>
                                     <Card.Body>
                                         <Card.Text></Card.Text>
                                     </Card.Body>
