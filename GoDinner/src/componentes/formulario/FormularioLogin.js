@@ -129,7 +129,7 @@ class FormularioLogin extends Component{
                             <span onClick={e => this.validaCampos(e)} class="btn btn-orange"  style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Entrar</span>
                         </div>  
                         <div class="row mt-3 mb-5 ml-1 mr-1">
-                            <span class="btn btn-orange " style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Cadastrar</span>
+                            <a href="#" class="btn btn-orange " style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Cadastrar</a>
                         </div>
                         <hr/>
                     </div>

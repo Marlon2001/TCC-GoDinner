@@ -23,7 +23,7 @@ export class SessaoQuemSomos3 extends Component{
                 <div class="row mt-5 mb-5">
                     <div class="col-12 col-md-8 col-lg-8 mx-auto">
                         <YouTube
-                            videoId="3K5AwIb5vrs"
+                            videoId="iD1n09KNqTg"
                             opts={opts}
                             onReady={this._onReady}
                         />
