@@ -100,40 +100,40 @@ class FormularioLogin extends Component{
         return(
             <Fragment>
                 <form>
-                    <div class="row mt-5">
-                        <div class="col-1  col-md-2 col-lg-3"></div>
+                    <div className="row mt-5">
+                        <div className="col-1  col-md-2 col-lg-3"></div>
                         {/* <!-- Formulário para Login --> */}
-                    <div class="col-10  col-md-8 col-lg-6">
+                    <div className="col-10  col-md-8 col-lg-6">
                         {/* <!--Div de logo e boas vindas--> */}
-                        <div class="row">
-                            <img src={Logo} class=" col-12 icone-imagem" alt="Logo GoDinner"/>
+                        <div className="row">
+                            <img src={Logo} className=" col-12 icone-imagem" alt="Logo GoDinner"/>
                         </div>
-                        <div class="row">
-                            <h3 class="mx-auto">Sistema GoDinner</h3>
+                        <div className="row">
+                            <h3 className="mx-auto">Sistema GoDinner</h3>
                         </div>
                         {/* <!--Div de Cadastro--> */}
-                        <div class="row ">
-                            <div class="col-12 mt-5 ">
-                                <label class="h5">Email</label><br/>
-                                <input class="form-control  mb-2 mr-sm-2" type="email" id="email" name="email" value={this.state.funcionario.email}  placeholder="Digite o seu Email ..." onChange={e => this.atualizaCampo(e)}/>
+                        <div className="row ">
+                            <div className="col-12 mt-5 ">
+                                <label className="h5">Email</label><br/>
+                                <input className="form-control  mb-2 mr-sm-2" type="email" id="email" name="email" value={this.state.funcionario.email}  placeholder="Digite o seu Email ..." onChange={e => this.atualizaCampo(e)}/>
                             </div>
                         </div>
-                        <div class="row ">
-                            <div class="col-12 ">
-                                <label class="h5">Senha</label><br/>
-                                <input class="form-control   mr-sm-12" type="password" id="password" name="password"  value={this.state.funcionario.password} placeholder="Digite a sua senha .."  onChange={e => this.atualizaCampo(e)}/>
+                        <div className="row ">
+                            <div className="col-12 ">
+                                <label className="h5">Senha</label><br/>
+                                <input className="form-control   mr-sm-12" type="password" id="password" name="password"  value={this.state.funcionario.password} placeholder="Digite a sua senha .."  onChange={e => this.atualizaCampo(e)}/>
                             </div>
                         </div>
                         {/* <!--botões para cadastrar e entrar--> */}
-                        <div class="row mt-5 mb-5 ml-1 mr-1">
-                            <span onClick={e => this.validaCampos(e)} class="btn btn-orange"  style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Entrar</span>
+                        <div className="row mt-5 mb-5 ml-1 mr-1">
+                            <span onClick={e => this.validaCampos(e)} className="btn btn-orange"  style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Entrar</span>
                         </div>  
-                        <div class="row mt-3 mb-5 ml-1 mr-1">
-                            <a href="#" class="btn btn-orange " style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Cadastrar</a>
+                        <div className="row mt-3 mb-5 ml-1 mr-1">
+                            <a href="#" className="btn btn-orange " style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Cadastrar</a>
                         </div>
                         <hr/>
                     </div>
-                    <div class="col-1 col-md-2 col-lg-3"></div>
+                    <div className="col-1 col-md-2 col-lg-3"></div>
                     </div>
                 </form>
             <ToastContainer/>

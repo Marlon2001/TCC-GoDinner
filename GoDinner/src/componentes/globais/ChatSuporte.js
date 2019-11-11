@@ -5,7 +5,7 @@ import 'react-chat-elements/dist/main.css';
 import React, {Component} from 'react' ;
 import io from 'socket.io-client';
 import $ from "jquery"
-const socket = io('http://godinner.tk:3005');
+const socket = io('https://godinner.tk:3005');
 
 // import 
 
@@ -51,7 +51,7 @@ class ChatSuporte extends Component{
             )
             
             
-            this.setState({dataSource: dataSourceNew} );
+            this.setState({dataSource: dataSourceNew});
 
 
             let objScroll = document.querySelector(".div_rodape_chat");
@@ -98,7 +98,7 @@ class ChatSuporte extends Component{
                     dataSource={this.state.dataSource} />
 
                     <div className="div_rodape_chat" id="todape_chat">
-                        <input text="text" class="input_envia_msg" id="campo_da_mensagem"></input>
+                        <input text="text" className="input_envia_msg" id="campo_da_mensagem"></input>
                         <button className="btn_enviar desativado_btn_chat" id="btn_chat" onClick={() => this.enviarMensagem()}>
                             Enviar
                         </button>
