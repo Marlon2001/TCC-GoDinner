@@ -17,8 +17,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.div_rodape_chat, .caixa_chat{
+  background-color: rgb(238, 238, 238);
+  border-color:   rgba(153, 153, 153, 0.644);
+  border-width: 0 1px;
+  border-style: solid;
+}
+
+.top_chat_baixo, .top_chat{
+  background-color: #F26B3A;
+  font-size: 20px;
+}
+
 .caixa_chat{
-  background-color: rgb(233, 233, 233);
   width: 350px;
   height: 450px;
   position: fixed;
@@ -31,28 +43,24 @@ code {
 }
 .top_chat{
   width: 350px;
-  background-color: white;
-  border-top: solid 1px rgb(184, 184, 184);
-  border-left: solid 1px rgb(184, 184, 184);
-  border-right: solid 1px rgb(184, 184, 184);
+  height: 45px;
+  
   text-align: center;
   padding-top: 5px;
-  height: 40px;
   margin-bottom: 10px;
   position: fixed;
   margin-top: -50px;
   z-index: 999;
 }
+
 .top_chat_baixo{
   width: 350px;
-  background-color: white;
   border: solid 1px rgb(184, 184, 184);
   text-align: center;
   padding-top: 5px;
-  height: 40px;
   bottom: 1px;
   position: fixed;
-  
+  height: 45px;
   z-index: 999;
 }
 .display_none{
@@ -67,41 +75,29 @@ code {
   vertical-align: bottom;
 }
 .div_rodape_chat{
-  background-color: rgb(223, 223, 223);
+ /* background-color: rgb(238, 238, 238); */
   right: 20px;
-  border-top: solid 1px rgb(184, 184, 184);;
   bottom: 0;
-  border-radius: 3px;
-  height: 37px;
+  height: 43px;
   width: 350px;
   position: fixed;
-  z-index: 999;
+  
   padding-left: 10px;
-  padding-top: 3px;
 }
 .desativado_btn_chat{
   background-color: rgb(170, 170, 170) !important;
   color: black !important;
 }
 .btn_enviar{
-  width: 85px;
-  
   bottom: 0;
-  background-color: #F26B3A;
-  border-radius: 5px;
+  background-color: #F26B3A !important;
   color: white;
-  border: 0;
-  height: 30px;
+  height: 35px;
 }
 .input_envia_msg{
   width: 245px;
   margin-right: 10px;
-  height: 30px;
-  border-radius: 2px;
-  border-radius: 2px;
-  border:0;
-  
-  
+  height: 35px !important;  
 }
 
 ::-webkit-scrollbar-track {
