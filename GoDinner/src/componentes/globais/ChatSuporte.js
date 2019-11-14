@@ -6,7 +6,13 @@ import iconChat  from '../../recursos/icons/ico-chat.png';
 import React, {Component} from 'react' ;
 import io from 'socket.io-client';
 import $ from "jquery"
-const socket = io('https://godinner.tk:3005');
+import {confirmAlert} from 'react-confirm-alert';
+import './css/react-confirm-alert.css'; // Import css
+
+
+const socket = io('http://godinner.tk:3100');
+
+
 
 
 
@@ -18,17 +24,36 @@ class ChatSuporte extends Component{
     constructor(){
         super();
         this.state = { ...initialState }
-            
+        
         
         
     }
     componentDidMount(){
         socket.on('suporte', data => {
-            this.entrarNoChamado(data.id);
+            this.verificarDesponibilidade(data.id);
             $("#top_chat").html(`Usuário: ${data.nome}`);
         });
     }
+    verificarDesponibilidade(id){
+        const option={
+            title: 'Suporte',
+            message: 'Deseja atender o pedido de suporte?',
+            buttons: [
+            {
+                label: 'Sim, agora!',
+                onClick: () => this.entrarNoChamado(id)
+            },
+            {
+                label: 'Não, estou ocupado(a)',
+                // onClick: () => entrarNoChamado(id)
+            }
+            ]
+        }
+        confirmAlert(option);
+    }
     entrarNoChamado(id){
+
+        
 
         let idFuncionario = localStorage.getItem("id");
         let username = localStorage.getItem("nome");
@@ -98,15 +123,9 @@ class ChatSuporte extends Component{
                     toBottomHeight={'70%'}
                     dataSource={this.state.dataSource} />
 
-<<<<<<< HEAD
-                    <div className="div_rodape_chat" id="todape_chat">
-                        <input text="text" className="input_envia_msg" id="campo_da_mensagem"></input>
-                        <button className="btn_enviar desativado_btn_chat" id="btn_chat" onClick={() => this.enviarMensagem()}>
-=======
                     <div className="div_rodape_chat d-flex flex-rows" id="todape_chat">
                         <input text="text" class="input_envia_msg form-control w-75" id="campo_da_mensagem"/>
                         <button className="btn btn_enviar desativado_btn_chat text-light" id="btn_chat" onClick={() => this.enviarMensagem()}>
->>>>>>> 12b4ab1dbcf823f355fd3429583730b76491802e
                             Enviar
                         </button>
                     </div>
