@@ -9,11 +9,11 @@ export class PaginaLogin extends Component{
         return(
             <Fragment>
                 
-                <header class="container-header">     
+                <header className="container-header">     
                     <DivHeader  theme={{ cor: 'laranja' }}/>
                     <DivHeader  className="mt-2" theme={{ cor: 'preto' }}/>
                 </header>
-                <div class="container ">
+                <div className="container ">
                     <FormularioLogin/>
                 </div>
             </Fragment>

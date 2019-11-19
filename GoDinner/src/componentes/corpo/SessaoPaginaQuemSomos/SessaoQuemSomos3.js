@@ -20,8 +20,8 @@ export class SessaoQuemSomos3 extends Component{
                 <div className=" mt-5 mb-5">
                     <h1>Assitam nosso vídeo!</h1>
                 </div>
-                <div class="row mt-5 mb-5">
-                    <div class="col-12 col-md-8 col-lg-8 mx-auto">
+                <div className="row mt-5 mb-5">
+                    <div className="col-12 col-md-8 col-lg-8 mx-auto">
                         <YouTube
                             videoId="iD1n09KNqTg"
                             opts={opts}

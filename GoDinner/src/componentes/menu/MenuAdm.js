@@ -46,7 +46,7 @@ export class MenuAdm extends Component {
 
     render() {
         return (
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{ zIndex: '1' }}>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{ zIndex: '1' }}>
                 <Link className="navbar-brand logo"  to="/administracao-godinner">
                     <img src={Logo} style={{ maxWidth: '200px', marginTop: '-5px' }} alt="Logo GoDinner" />
                 </Link>

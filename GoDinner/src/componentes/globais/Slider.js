@@ -48,13 +48,13 @@ export class SliderBox extends Component{
                 <h4 className="font-tamanho-23">Para todos os tipos de gostos</h4>
                 <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
                 
-                <div class="box">
-                    <div class="dummy">
+                <div className="box">
+                    <div className="dummy">
                         {this.state.categorias.map(item => (
-                            <div class="categoria-comida" key={item.nome}>
-                                <img class="tamanho-imagem rounded-circle"  alt={item.nome} src={ `${DOMINIO_IMG}${item.foto}`} 
+                            <div className="categoria-comida" key={item.nome}>
+                                <img className="tamanho-imagem rounded-circle"  alt={item.nome} src={ `${DOMINIO_IMG}${item.foto}`} 
                                 />
-                                <p class="text-center mt-2">{item.nome}</p>
+                                <p className="text-center mt-2">{item.nome}</p>
                             </div>
                                     
                         ))} 
