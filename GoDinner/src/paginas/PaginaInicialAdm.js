@@ -18,6 +18,9 @@ export class PaginaInicialAdm extends Component{
               labels:['JAN','FEV','MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
               datasets:[{
                   label: 'Restaurantes cadastrados',
+
+                  //
+                  //setState(sata:[resposta.janereiro, resppsta.feveriro])
                   data:[
                       50,
                       100,
@@ -65,7 +68,7 @@ export class PaginaInicialAdm extends Component{
                         <div className="row">
                             <div className="col-md-3 col-6 mb-2">
                                 <Card>
-                                    <Card.Header className="bg-primary text-white">Arrecadação do mês</Card.Header>
+                                    <Card.Header className="bg-primary text-white">Arrecadação</Card.Header>
                                     <Card.Body>
                                         <Card.Text></Card.Text>
                                     </Card.Body>
@@ -81,7 +84,7 @@ export class PaginaInicialAdm extends Component{
                             </div>
                             <div className="col-md-3 mb-2 col-6">
                                 <Card>
-                                    <Card.Header className="bg-info text-white">Consumidores cadastrados</Card.Header>
+                                    <Card.Header className="bg-info text-white">Restaurantes Cadastrados</Card.Header>
                                     <Card.Body>
                                         <Card.Text></Card.Text>
                                     </Card.Body>
