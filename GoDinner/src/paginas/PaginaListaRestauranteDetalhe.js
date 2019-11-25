@@ -188,10 +188,6 @@ export class PaginaListaRestauranteDetalhe extends Component{
                                 <label className="h6">Telefone:</label>
                                 <input className="w3-input" readonly="readonly" value={this.state.restaurante.telefone}/>
                             </div>
-                            <div className="col-md-6 mt-3">
-                                <label className="h6">Dt. Criação:</label> 
-                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.criacao}/>
-                            </div>
                         </div>  
                     </div>
                 </div>

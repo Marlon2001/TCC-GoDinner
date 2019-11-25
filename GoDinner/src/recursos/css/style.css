@@ -15,7 +15,10 @@
     margin-top:120px;
     background-repeat: no-repeat;
 }
-
+.z-index{
+    position: absolute;
+    z-index: 9999;
+}
 
 .border-bottom-laranja:hover{
     border: 1px #F26B3A solid;
