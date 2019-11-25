@@ -36,9 +36,22 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
                 }
             },
+            
+            categoria:[],
 
+            lucro:{
+                total: '',
+            },
 
-            categoria:[]
+            avaliacao:{
+                total: '',
+            },
+
+            totalPedido:{
+                total:''
+            },
+            
+           
         }   
     }
 
@@ -46,6 +59,9 @@ export class PaginaListaRestauranteDetalhe extends Component{
    componentDidMount() {
         this.carregarCategoria();
         this.carregarDadosRestaurante();
+        this.carregarLucro();
+        this.carregarAvaliacao();
+        
        
     }
 
@@ -80,6 +96,72 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
     }
 
+    carregarLucro(){
+        const { id } = this.props.match.params;
+
+        const url = `${DOMINIO}/restaurante/saldorestaurante/${id}`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({lucro:resposta});
+                console.log(resposta);
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }
+
+    carregarAvaliacao(){
+        const { id } = this.props.match.params;
+
+        const url = `${DOMINIO}/avaliacao/mediarestaurante/${id}`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({avaliacao:resposta});
+                console.log(resposta);
+                console.log("A cima")
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }
+    carregarTotalPedido(){
+        const { id } = this.props.match.params;
+
+        const url = `${DOMINIO}/pedidos/pedidorestaurante/${id}`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({totalPedido:resposta});
+                console.log(resposta);
+                console.log("A cima");
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }    
     carregarDadosRestaurante(){
 
         const { id } = this.props.match.params;
@@ -106,6 +188,7 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
     }
 
+    
 
     render(){
         return(
@@ -120,9 +203,9 @@ export class PaginaListaRestauranteDetalhe extends Component{
                             <div className="row mt-4 ">
                                 <div className="col-12">
                                     <h6 className="mt-2">Devendo: </h6>
-                                    <h6 className="mt-2">Lucro: R$</h6>
-                                    <h6 className="mt-2">Total de vendas</h6>
-                                    <h6 className="mt-2">Avaliação</h6>
+                                    <h6 className="mt-2">Lucro: R$ {this.state.lucro.total}</h6>
+                                    <h6 className="mt-2">Total de vendas: {this.state.totalPedido.total}</h6>
+                                    <h6 className="mt-2">Avaliação: {this.state.avaliacao.total}</h6>
                                     <div className="row mb-5">
                                         <div className="col-3 mt-2 h6">Categorias:</div>
                                         {this.state.categoria.map(item => (

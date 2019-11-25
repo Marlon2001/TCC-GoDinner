@@ -10,18 +10,35 @@ export class PaginaListaRestaurante extends Component {
         super();
         this.state = {
             itens: [],
-            foto: ''
+            foto: '',
+
+            arrecadacao:[]
+
+
         }
 
     }
-    visualizarRestaurante(){
+    visualizarRestaurante(e){
 
         this.setState({ itens: [] });
 
-        
+        let url;
+
+        switch (e) {
+            case "ativo":
+                url = `${DOMINIO}/restaurante/ativo`;
+               
+                break;
+            case "desativo":
+                url = `${DOMINIO}/restaurante/desativo`;
+
+                break;
+            default:
+                url = `${DOMINIO}/restaurante`;
+        }
 
         $.ajax({
-            url: `${DOMINIO}/restaurante`,
+            url: url,
             type: 'GET',
             headers: { "token": TOKEN },
             // dataType: 'json',
@@ -42,8 +59,31 @@ export class PaginaListaRestaurante extends Component {
     componentDidMount() {
        
         this.visualizarRestaurante();
+        this.carregarTotalArrecadacao();
     }
 
+    carregarTotalArrecadacao(){
+        const { id } = this.props.match.params;
+
+        const url = `${DOMINIO}/restaurante/arrecadacao`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({arrecadacao:resposta});
+                console.log(resposta);
+                console.log("A cimaasdasdasda");
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }    
 
     render() {
         return (
@@ -71,14 +111,14 @@ export class PaginaListaRestaurante extends Component {
                         </div>
                     </div>
 
-                    <div className="row mt-5">
-                        <span className="col-1 ">Ativados</span>
-                        <span className="col-1 ml-5"> Destivados</span>
+                    <div className="row mt-5" style={{cursor: 'pointer' }}>
+                        <span className="col-1 " onClick={e => this.visualizarRestaurante(e = "ativo")}>Ativados</span>
+                        <span className="col-1 ml-5" onClick={e => this.visualizarRestaurante(e = "desativo")}> Destivados</span>
                     </div>
                     <hr/>
                     {this.state.itens.map(item => (
                         <div className="card mb-5 mt-5">
-                            <ItensListaRestaurante foto={item.foto} item={item || ""}/>
+                            <ItensListaRestaurante foto={item.foto} item={item || ""} onkeyup/>
                         </div>
                     ))}
                 </div>

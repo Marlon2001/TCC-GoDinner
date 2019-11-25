@@ -10,7 +10,7 @@ import {confirmAlert} from 'react-confirm-alert';
 import './css/react-confirm-alert.css'; // Import css
 
 
-const socket = io('http://godinner.tk:3005');
+const socket = io('http://godinner.tk:3000', {secure:false});
 
 
 
