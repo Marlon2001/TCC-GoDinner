@@ -109,16 +109,16 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
     render(){
         return(
-            <div class=" container">
-                <h1 class="mb-3 text-center mt-5">{this.state.restaurante.razaoSocial}</h1>
+            <div className=" container">
+                <h1 className="mb-3 text-center mt-5">{this.state.restaurante.razaoSocial}</h1>
                 <hr/>
-                <div class="row mt-5">
-                    <div class="col-md-5">
-                            <div class="row ml-0 mt-4">
+                <div className="row mt-5">
+                    <div className="col-md-5">
+                            <div className="row ml-0 mt-4">
                                 <img  className="foto-restaurante"src='' style={{width: 100 + '%', height: 300 + 'px'}} alt={'Restaurante '+this.state.restaurante.razaoSocial}/>
                             </div>
-                            <div class="row mt-4 ">
-                                <div class="col-12">
+                            <div className="row mt-4 ">
+                                <div className="col-12">
                                     <h6 className="mt-2">Devendo: </h6>
                                     <h6 className="mt-2">Lucro: R$</h6>
                                     <h6 className="mt-2">Total de vendas</h6>
@@ -137,60 +137,56 @@ export class PaginaListaRestauranteDetalhe extends Component{
                                 </div>
                             </div>
                     </div>
-                    <div class="col-md-6 ml-5">
-                        <div class="row">
-                            <div class="col-md-6  mt-1">
+                    <div className="col-md-6 ml-5">
+                        <div className="row">
+                            <div className="col-md-6  mt-1">
                                 <label className="h6">CNPJ:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.cnpj}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.cnpj}/>
                             </div>
-                            <div class="col-md-6  mt-1">
+                            <div className="col-md-6  mt-1">
                                 <label className="h6">Razão Social:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.razaoSocial}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.razaoSocial}/>
                             </div>
-                            <div class="col-md-12 mt-3">
+                            <div className="col-md-12 mt-3">
                                 <label className="h6">E-mail:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.email}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.email}/>
                             </div>
-                            <div class="col-md-12 mt-3">
+                            <div className="col-md-12 mt-3">
                                 <label className="h6">Endereço:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.logradouro}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.endereco.logradouro}/>
                             </div>
-                            <div class="col-md-6  mt-3">
+                            <div className="col-md-6  mt-3">
                                 <label className="h6">Numero:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.numero}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.endereco.numero}/>
                             </div>
-                            <div class="col-md-6  mt-3">
+                            <div className="col-md-6  mt-3">
                                 <label className="h6">Bairro:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.bairro}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.endereco.bairro}/>
                             </div>
-                            <div class="col-md-6  mt-3">
+                            <div className="col-md-6  mt-3">
                                 <label className="h6">Cidade:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cidade.cidade}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cidade.cidade}/>
                             </div>
                             
-                            <div class="col-md-6  mt-3">
+                            <div className="col-md-6  mt-3">
                                 <label className="h6">Estado:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cidade.estado.estado}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cidade.estado.estado}/>
                             </div>
-                            <div class="col-md-12 mt-3">
+                            <div className="col-md-12 mt-3">
                                 <label className="h6">Complemento:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.complemento}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.endereco.complemento}/>
                             </div>
-                            <div class="col-md-12 mt-3">
+                            <div className="col-md-12 mt-3">
                                 <label className="h6">Referência:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.referencia}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.endereco.referencia}/>
                             </div>
-                            <div class="col-md-6  mt-3">
+                            <div className="col-md-6  mt-3">
                                 <label className="h6">CEP:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cep}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.endereco.cep}/>
                             </div>
-                            <div class="col-md-6  mt-3">
+                            <div className="col-md-6  mt-3">
                                 <label className="h6">Telefone:</label>
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.telefone}/>
-                            </div>
-                            <div class="col-md-6 mt-3">
-                                <label className="h6">Dt. Criação:</label> 
-                                <input class="w3-input" readonly="readonly" value={this.state.restaurante.criacao}/>
+                                <input className="w3-input" readonly="readonly" value={this.state.restaurante.telefone}/>
                             </div>
                         </div>  
                     </div>

@@ -6,6 +6,10 @@ import iconChat  from '../../recursos/icons/ico-chat.png';
 import React, {Component} from 'react' ;
 import io from 'socket.io-client';
 import $ from "jquery"
+import {confirmAlert} from 'react-confirm-alert';
+import './css/react-confirm-alert.css'; // Import css
+
+
 const socket = io('http://godinner.tk:3005');
 
 
@@ -18,17 +22,36 @@ class ChatSuporte extends Component{
     constructor(){
         super();
         this.state = { ...initialState }
-            
+        
         
         
     }
     componentDidMount(){
         socket.on('suporte', data => {
-            this.entrarNoChamado(data.id);
+            this.verificarDesponibilidade(data.id);
             $("#top_chat").html(`Usuário: ${data.nome}`);
         });
     }
+    verificarDesponibilidade(id){
+        const option={
+            title: 'Suporte',
+            message: 'Deseja atender o pedido de suporte?',
+            buttons: [
+            {
+                label: 'Sim, agora!',
+                onClick: () => this.entrarNoChamado(id)
+            },
+            {
+                label: 'Não, estou ocupado(a)',
+                // onClick: () => entrarNoChamado(id)
+            }
+            ]
+        }
+        confirmAlert(option);
+    }
     entrarNoChamado(id){
+
+        
 
         let idFuncionario = localStorage.getItem("id");
         let username = localStorage.getItem("nome");
@@ -51,7 +74,7 @@ class ChatSuporte extends Component{
             )
             
             
-            this.setState({dataSource: dataSourceNew} );
+            this.setState({dataSource: dataSourceNew});
 
 
             let objScroll = document.querySelector(".div_rodape_chat");

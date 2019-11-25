@@ -13,8 +13,8 @@ export class SessaoQuemSomos1 extends Component{
                         <p class="font-tamanho-20 text-justify">GoDinner, que tem como objetivo auxiliar o consumidor a realizar as sua compras e o restaurante expor os seus produtos.
                          Assim, facilmente o consumidor vai conseguir comer o que quiser sem sair de casa e o restaurante aumentar as suas vendas.</p>
                     </div>
-                    <div class="col-md-7 col-12 imagem-esta-com-fome ">
-                        <img src={QuemSomos} alt="" class="rounded float-right"/>
+                    <div className="col-md-7 col-12 imagem-esta-com-fome ">
+                        <img src={QuemSomos} alt="" className="rounded float-right"/>
                     </div>
                     
                 </div>

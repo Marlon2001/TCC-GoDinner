@@ -46,7 +46,13 @@ export class PaginaInicialAdm extends Component{
                     'rgba(234, 177, 19,0.6 )'
                 ]
             }]
-        }
+            },
+
+           /* arrecadacao:{
+                total:
+            }*/
+
+
         }
       }
     
