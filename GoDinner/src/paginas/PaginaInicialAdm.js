@@ -164,14 +164,14 @@ export class PaginaInicialAdm extends Component{
                     <div className="col-12 ">
                         <div className="row">
                             <div className="col-md-3 col-6 mb-2">
-                                <Card className="text-center">
-                                    <Card.Header className="bg-primary text-white text-center">Arrecadação da Godinner</Card.Header>
+                                <Card className="text-center h6">
+                                    <Card.Header className="bg-primary text-white text-center ">Arrecadação da Godinner</Card.Header>
                                     <Card.Body>
                                         <Card.Text>{this.state.arrecadacao.total}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-md-3 mb-2 col-6">
+                            <div className="col-md-3 mb-2 col-6 h6">
                                 <Card className="text-center">
                                     <Card.Header  className="bg-success text-white">Restaurantes devedores</Card.Header>
                                     <Card.Body>
@@ -179,7 +179,7 @@ export class PaginaInicialAdm extends Component{
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-md-3 mb-2 col-6">
+                            <div className="col-md-3 mb-2 col-6 h6">
                                 <Card className="text-center">
                                     <Card.Header className="bg-info text-white">Restaurantes Cadastrados</Card.Header>
                                     <Card.Body>
@@ -187,7 +187,7 @@ export class PaginaInicialAdm extends Component{
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-md-3  mb-2 col-6">
+                            <div className="col-md-3  mb-2 col-6 h6">
                                 <Card className="text-center">
                                     <Card.Header className="bg-danger text-white">Consumidores cadastrados</Card.Header>
                                     <Card.Body>
@@ -199,7 +199,7 @@ export class PaginaInicialAdm extends Component{
                     </div>
                 </div>
                <div className="row mt-3">
-                    <div className="col-6  pb-2">
+                    <div className="col-md-6 col-12  pb-2">
                             <Card  style={{ width: '100%', height: '380px' }}>
                                 <Card.Body>
                                    <div >
@@ -226,7 +226,7 @@ export class PaginaInicialAdm extends Component{
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col-6  pb-2">
+                    <div className="col-12 col-md-6  pb-2">
                         <Card   style={{ width: '100%', height: '380px' }}>
                             <Card.Body>
                             <Line

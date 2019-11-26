@@ -50,6 +50,8 @@ export class PaginaListaRestauranteDetalhe extends Component{
             totalPedido:{
                 total:''
             },
+
+            isChecked: true || false
             
            
         }   
@@ -64,6 +66,76 @@ export class PaginaListaRestauranteDetalhe extends Component{
         
        
     }
+
+
+
+    /*verificaStatus() {
+
+        const { id } = this.props.match.params;
+        const token = localStorage.getItem('token');
+
+        const url = `${DOMINIO}/produto/${id}`;
+
+        if (id !== null) {
+
+
+
+            $.ajax({
+                url: url,
+                type: 'get',
+                headers: { 'token': token },
+                success: function (resposta) {
+
+                    this.setState({ produto: resposta })
+
+                    switch (resposta.status) {
+                        case "0":
+
+
+                            break;
+                        case "1":
+
+
+
+                            $('#btn-status').attr("checked", "checked");
+
+                            break;
+                    }
+                    $("#btn-lixeira").removeClass("d-none");
+                    $("#btn-switch").removeClass("d-none");
+
+                }.bind(this),
+                error: function (data) {
+                    console.log('Erro:', data);
+
+                }
+            });
+
+
+        } else {
+
+        }
+    }*/
+
+     //ATIVA E DESATIVA O PRODUTO
+    //  desativarProduto() {
+
+    //     const { id } = this.props.match.params;
+
+    //     const url = `${DOMINIO}/produto/status/${id}`;
+
+    //     $.ajax({
+    //         url: url,
+    //         type: 'PUT',
+    //         headers: { 'token': TOKEN },
+    //         success: function (data) {
+
+
+
+    //         }
+    //     });
+
+    // }
 
     carregarCategoria(){
 
@@ -140,6 +212,7 @@ export class PaginaListaRestauranteDetalhe extends Component{
             }
         });
     }
+
     carregarTotalPedido(){
         const { id } = this.props.match.params;
 
@@ -193,7 +266,20 @@ export class PaginaListaRestauranteDetalhe extends Component{
     render(){
         return(
             <div className=" container">
-                <h1 className="mb-3 text-center mt-5">{this.state.restaurante.razaoSocial}</h1>
+                <div className="row text-center">
+                    <div className="col-8 text-center">
+                    <h1 className="mb-3 mt-5">{this.state.restaurante.razaoSocial}</h1>
+                    </div>
+                    <div className="col-4 mt-5">
+                        <label className="switch ml-5 mt-2" id="btn-switch">
+                            <input id="btn-status" type="checkbox"  />
+                            {/* value={isChecked} onChange={e => this.atualizaCampo} onClick={e => this.desativarProduto(e)} */}
+                            <div className="slider"></div>
+                        </label>
+                    </div>
+                </div>
+                
+                
                 <hr/>
                 <div className="row mt-5">
                     <div className="col-md-5">

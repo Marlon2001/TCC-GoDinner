@@ -11,8 +11,7 @@ export class PaginaListaRestaurante extends Component {
         this.state = {
             itens: [],
             foto: '',
-
-            arrecadacao:[]
+            arrecadacao:''
 
 
         }
@@ -47,7 +46,7 @@ export class PaginaListaRestaurante extends Component {
             success: function (resposta) {
 
                 this.setState({ itens: resposta, foto: resposta.foto });
-
+                console.log(resposta);
             }.bind(this),
             error: function (data) {
 
@@ -59,57 +58,15 @@ export class PaginaListaRestaurante extends Component {
     componentDidMount() {
        
         this.visualizarRestaurante();
-        this.carregarTotalArrecadacao();
     }
 
-    carregarTotalArrecadacao(){
-        const { id } = this.props.match.params;
-
-        const url = `${DOMINIO}/restaurante/arrecadacao`;
-
-        $.ajax({
-            url: url,
-            type: 'GET',
-            headers: { 'token': TOKEN },
-            success: function (resposta) {
-
-                this.setState({arrecadacao:resposta});
-                console.log(resposta);
-                console.log("A cimaasdasdasda");
-
-
-            }.bind(this),
-            error: function (data) {
-
-            }
-        });
-    }    
+       
 
     render() {
         return (
             <Fragment>
                 <div className=" container">
-                    <h1 className="mb-3 text-center">Restaurantes Cadastrados</h1>
-                    
-                    <div className="row justify-content-md-center">
-                        <div className="col-4 mt-5 ">
-                            <div className="input-group">
-                                <input type="text" className="form-control" placeholder="Buscar por..." name="search"/>
-                                <div className="input-group-btn">
-                                    <button className="btn btn-default" type="submit"> <img src="" alt="" /></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-4 mt-5">
-                            <FormGroup>
-                                <FormControl as="select">
-                                    <option> Filtrar por...</option>
-                                    <option>Mais bem avaliados</option>
-                                </FormControl>
-                                    
-                            </FormGroup>
-                        </div>
-                    </div>
+                    <h1 className="mb-3 text-center mb-5 mt-5">Restaurantes Cadastrados</h1>
 
                     <div className="row mt-5" style={{cursor: 'pointer' }}>
                         <span className="col-1 " onClick={e => this.visualizarRestaurante(e = "ativo")}>Ativados</span>
@@ -118,7 +75,7 @@ export class PaginaListaRestaurante extends Component {
                     <hr/>
                     {this.state.itens.map(item => (
                         <div className="card mb-5 mt-5">
-                            <ItensListaRestaurante foto={item.foto} item={item || ""} onkeyup/>
+                            <ItensListaRestaurante foto={item.foto} item={item || ""} ar={item.id}/>
                         </div>
                     ))}
                 </div>
