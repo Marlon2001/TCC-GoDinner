@@ -318,7 +318,7 @@ export class PaginaListaRestauranteDetalhe extends Component{
                             </div>
                             <div className="row mt-4 ">
                                 <div className="col-12">
-                                    <h6 className="mt-2">Devendo: {this.state.debito.total}</h6>
+                                    {/* <h6 className="mt-2">Devendo: {this.state.debito.total}</h6> */}
                                     <h6 className="mt-2">Lucro: R$ {this.state.lucro.total}</h6>
                                     <h6 className="mt-2">Total de vendas: {this.state.totalPedido.total}</h6>
                                     <h6 className="mt-2">Avaliação: {this.state.avaliacao.total}</h6>
