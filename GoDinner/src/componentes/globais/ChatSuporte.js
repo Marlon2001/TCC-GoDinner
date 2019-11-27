@@ -5,12 +5,12 @@ import 'react-chat-elements/dist/main.css';
 import iconChat  from '../../recursos/icons/ico-chat.png';
 import React, {Component} from 'react' ;
 import io from 'socket.io-client';
-import $ from "jquery"
+import $ from "jquery" 
 import {confirmAlert} from 'react-confirm-alert';
 import './css/react-confirm-alert.css'; // Import css
 
 
-const socket = io('http://godinner.tk:3005');
+const socket = io('https://godinner.tk:3000');
 
 
 
@@ -22,14 +22,20 @@ class ChatSuporte extends Component{
     constructor(){
         super();
         this.state = { ...initialState }
-        
-        
-        
+        this.enviarMensagem = enviarMensagem;
     }
+
     componentDidMount(){
         socket.on('suporte', data => {
             this.verificarDesponibilidade(data.id);
             $("#top_chat").html(`Usuário: ${data.nome}`);
+        });
+
+        $('.input_envia_msg').keypress(function (e) {
+            if (e.which == 13 || e.keyCode == 13) {
+                this.enviarMensagem();
+                return false;
+            }
         });
     }
     verificarDesponibilidade(id){
@@ -49,21 +55,21 @@ class ChatSuporte extends Component{
         }
         confirmAlert(option);
     }
+
     entrarNoChamado(id){
+        $('#top_chat').attr({scrollTop: $('#top_chat').attr('scrollHeight')});
 
-        
-
+        const mCaixaChat = document.getElementById("caixa_chat");
         let idFuncionario = localStorage.getItem("id");
         let username = localStorage.getItem("nome");
         let token = localStorage.getItem("token");
         socket.emit('join',{ room: id, idFuncionario: idFuncionario,token: token,  username: username, remetente: "F"});
-        
+
+        socket.off('message');
         socket.on('message', data => {
-            
             let dataSourceNew = this.state.dataSource
             let lado = data.remetente === "F" ? "right" : "left" ;
 
-            
             dataSourceNew.push(
                 {
                     position: lado,
@@ -71,25 +77,26 @@ class ChatSuporte extends Component{
                     text: data.message,
                     date: new Date()
                 }
-            )
-            
+            );
             
             this.setState({dataSource: dataSourceNew});
-
-
-            let objScroll = document.querySelector(".div_rodape_chat");
-            objScroll.scrollTop = objScroll.scrollHeight;
-
+            $("#caixa_chat").animate({
+                scrollTop: $("#caixa_chat")[0].scrollHeight
+            }, 200);
 
             $("#btn_chat").removeClass("desativado_btn_chat");
             
         });
     }
+
     enviarMensagem(){
-        let texto = $("#campo_da_mensagem").val();
-        $("#campo_da_mensagem").val("");
-        socket.emit('message', {username: "GoDinner", message:texto, remetente:"F" });
+        let texto = $("#campo_da_mensagem").val().trim();
+        if(texto != ""){
+            $("#campo_da_mensagem").val("");
+            socket.emit('message', {username: "GoDinner", message:texto, remetente:"F" });
+        }
     }
+
     abaixarLevantarChat(){
         if($("#caixa_chat").hasClass("caixa_chat")){
             $("#caixa_chat").removeClass("caixa_chat")
@@ -108,11 +115,11 @@ class ChatSuporte extends Component{
         }
     }
 
-    render(){
+    render() {
         return(
             <div className="caixa_chat" id="caixa_chat" >
-                <div className="top_chat justify-content-start text-light d-flex flex-rows" id="top_chat" onClick={() => this.abaixarLevantarChat()}>
-                    <img className="ml-2" src={iconChat} alt="chat" style={{maxWidth: "35px"}}/>
+                <div className="top_chat p-2 justify-content-center text-light d-flex flex-rows" id="top_chat" onClick={() => this.abaixarLevantarChat()}>
+                    <img className=" ml-2" src={iconChat} alt="chat" style={{maxWidth: "35px"}}/>
                     <font className="ml-2">Chat</font>
                 </div>
                 <MessageList
