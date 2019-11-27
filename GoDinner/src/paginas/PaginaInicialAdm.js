@@ -5,6 +5,8 @@ import {
     CorpoGraficos, IconeOpcoes
 } from './style/style';
 import { Bar, Line, Pie } from 'react-chartjs-2';
+import $ from 'jquery';
+import {DOMINIO} from "../link_config"
 
 
 
@@ -21,11 +23,7 @@ export class PaginaInicialAdm extends Component{
 
                   //
                   //setState(sata:[resposta.janereiro, resppsta.feveriro])
-                  data:[
-                      50,
-                      100,
-                      150,200,250,300,350,400,450,500,550,600
-                  ],
+                  data:[],
                   backgroundColor:[
                       'rgba(242, 107, 58, 0.6)'
                   ]
@@ -36,12 +34,8 @@ export class PaginaInicialAdm extends Component{
           chartData2:{
             labels:['JAN','FEV','MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
             datasets:[{
-                label: 'Arrecadação p/ mês',
-                data:[
-                    50,
-                    300,
-                    500,520,600,900,850,1000,1580,2000,2001,2360
-                ],
+                label: 'Arrecadação p/ mês em reais',
+                data:[],
                 backgroundColor:[
                     'rgba(234, 177, 19,0.6 )'
                 ]
@@ -54,16 +48,92 @@ export class PaginaInicialAdm extends Component{
 
 
         }
+        this.buscarRestaurantesCadastrados();
+        this.buscarArrecadacaoDoMes();
       }
+      
+      
     
       static defaultProps = {
         displayTitle:true,
         displayLegend: true,
-        legendPosition:'right',
+        legendPosition:'bottom',
         location:'City'
       }
+    buscarRestaurantesCadastrados(){
+        let url = DOMINIO + "/funcionarios/arrecadacaomes"
+        let token = localStorage.getItem("token")
+        $.ajax({
+            url: url,
+            type: 'get',
+            dataType: 'json',
+            headers: {"token":token},
+            contentType: "application/json",
+            success: (resposta)=> {
+                let chartDataState = this.state.chartData2;
+                
+                chartDataState.datasets[0].data[0] = (resposta.janeiro == null?0:resposta.janeiro)
+                chartDataState.datasets[0].data[1] = (resposta.fevereiro == null?0:resposta.fevereiro)
+                chartDataState.datasets[0].data[2] = (resposta.marco == null?0:resposta.marco)
 
+                chartDataState.datasets[0].data[3] = (resposta.abril == null?0:resposta.abril)
+                
+                chartDataState.datasets[0].data[4] = (resposta.maio == null?0:resposta.maio)
+                chartDataState.datasets[0].data[5] = (resposta.junho == null?0:resposta.junho)
+                chartDataState.datasets[0].data[6] = (resposta.julho == null?0:resposta.julho)
+                chartDataState.datasets[0].data[7] = (resposta.agosto == null?0:resposta.agosto)
+                chartDataState.datasets[0].data[8] = (resposta.setembro == null?0:resposta.setembro)
+                chartDataState.datasets[0].data[9] = (resposta.outubro == null?0:resposta.outubro)
+                chartDataState.datasets[0].data[10] = (resposta.novembro == null?0:resposta.novembro)
+                chartDataState.datasets[0].data[11] = (resposta.dezembro == null?0:resposta.dezembro)
+                
+                // chartDataState.datasets[0].data 
+                this.setState({chartData2: chartDataState});
+            },
 
+            error: function (data) {
+                console.log(data);
+
+            }
+        });
+    }
+    buscarArrecadacaoDoMes(){
+        let url = DOMINIO + "/funcionarios/restaurantescadastrado"
+        let token = localStorage.getItem("token")
+        $.ajax({
+            url: url,
+            type: 'get',
+            dataType: 'json',
+            headers: {"token":token},
+            contentType: "application/json",
+            success: (resposta)=> {
+                let chartDataState = this.state.chartData;
+                
+                chartDataState.datasets[0].data[0] = (resposta.janeiro == null?0:resposta.janeiro)
+                chartDataState.datasets[0].data[1] = (resposta.fevereiro == null?0:resposta.fevereiro)
+                chartDataState.datasets[0].data[2] = (resposta.marco == null?0:resposta.marco)
+
+                chartDataState.datasets[0].data[3] = (resposta.abril == null?0:resposta.abril)
+                
+                chartDataState.datasets[0].data[4] = (resposta.maio == null?0:resposta.maio)
+                chartDataState.datasets[0].data[5] = (resposta.junho == null?0:resposta.junho)
+                chartDataState.datasets[0].data[6] = (resposta.julho == null?0:resposta.julho)
+                chartDataState.datasets[0].data[7] = (resposta.agosto == null?0:resposta.agosto)
+                chartDataState.datasets[0].data[8] = (resposta.setembro == null?0:resposta.setembro)
+                chartDataState.datasets[0].data[9] = (resposta.outubro == null?0:resposta.outubro)
+                chartDataState.datasets[0].data[10] = (resposta.novembro == null?0:resposta.novembro)
+                chartDataState.datasets[0].data[11] = (resposta.dezembro == null?0:resposta.dezembro)
+                
+                // chartDataState.datasets[0].data 
+                this.setState({chartData: chartDataState});
+            },
+
+            error: function (data) {
+                console.log(data);
+
+            }
+        });
+    }
     render(){
         return(
             <div className="container">
@@ -113,6 +183,7 @@ export class PaginaInicialAdm extends Component{
                                 <Card.Body>
                                    <div >
                                    <Line
+                                   id="grafico1"
                                     width={100}
                                     height={300}
                                     data={this.state.chartData}
@@ -138,7 +209,7 @@ export class PaginaInicialAdm extends Component{
                     <div className="col-6  pb-2">
                         <Card   style={{ width: '100%', height: '380px' }}>
                             <Card.Body>
-                            <Line
+                            <Line   id="grafico2"
                                     width={100}
                                     height={300}
                                     data={this.state.chartData2}
