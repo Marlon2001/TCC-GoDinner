@@ -149,10 +149,15 @@ export class PaginaInicialAdm extends Component{
         });
     }
 
+
+
+
+
     componentDidMount() {
         this.carregarArregadacao();
         this.carregarRestauranteCadastrado ();
         this.carregarConsumidorCadastrado();
+        this.carregarDevedores();
     }
 
 
@@ -167,6 +172,27 @@ export class PaginaInicialAdm extends Component{
             success: function (resposta) {
 
                 this.setState({arrecadacao:resposta});
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }
+
+
+    carregarDevedores (){
+
+        const url = `${DOMINIO}/restaurante/qtdedebito`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({devedor:resposta});
                 console.log(resposta);
                 console.log("A cima");
 
@@ -189,8 +215,6 @@ export class PaginaInicialAdm extends Component{
             success: function (resposta) {
 
                 this.setState({restaurante:resposta});
-                console.log(resposta);
-                console.log("A cima");
 
 
             }.bind(this),
@@ -211,8 +235,6 @@ export class PaginaInicialAdm extends Component{
             success: function (resposta) {
 
                 this.setState({consumidor:resposta});
-                console.log(resposta);
-                console.log("A cimaaaaaa");
 
 
             }.bind(this),
@@ -246,7 +268,7 @@ export class PaginaInicialAdm extends Component{
                                 <Card className="text-center">
                                     <Card.Header  className="bg-success text-white">Restaurantes devedores</Card.Header>
                                     <Card.Body>
-                                        <Card.Text></Card.Text>
+                                        <Card.Text>{this.state.devedor.total}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
@@ -282,7 +304,7 @@ export class PaginaInicialAdm extends Component{
                                     options={{
                                         title:{
                                         display:this.props.displayTitle,
-                                        text:'Restaurantes Cadastrados por mês',
+                                        text:'Restaurantes Cadastrados (mês)',
                                         fontSize:23
                                         },
                                         maintainAspectRatio: false,
@@ -308,7 +330,7 @@ export class PaginaInicialAdm extends Component{
                                     options={{
                                         title:{
                                         display:this.props.displayTitle,
-                                        text:'Arrecadação do mês',
+                                        text:'Arrecadação da Godinner (mês)',
                                         fontSize:23
                                         },
                                         maintainAspectRatio: false,

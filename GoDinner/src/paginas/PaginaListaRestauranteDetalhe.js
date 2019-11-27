@@ -37,6 +37,10 @@ export class PaginaListaRestauranteDetalhe extends Component{
                 }
             },
             
+            debito:{
+                total: ''
+            },
+
             categoria:[],
 
             lucro:{
@@ -63,6 +67,7 @@ export class PaginaListaRestauranteDetalhe extends Component{
         this.carregarDadosRestaurante();
         this.carregarLucro();
         this.carregarAvaliacao();
+        this.carregarDebito();
         
        
     }
@@ -158,6 +163,31 @@ export class PaginaListaRestauranteDetalhe extends Component{
                 } else {
                     $(".foto-restaurante").attr("src", DOMINIO_IMG + resposta.foto);
                 }
+
+            }.bind(this),
+            error: function (data) {
+                console.log('Erro:', data);
+
+            }
+        });
+
+    }
+
+
+    carregarDebito(){
+
+        const { id } = this.props.match.params;
+
+
+        const url = `${DOMINIO}/restaurante/verificadebito/${id}`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+                console.log(resposta);
+                console.log("A Cimaaaaaaaa")
 
             }.bind(this),
             error: function (data) {
@@ -288,7 +318,7 @@ export class PaginaListaRestauranteDetalhe extends Component{
                             </div>
                             <div className="row mt-4 ">
                                 <div className="col-12">
-                                    <h6 className="mt-2">Devendo: </h6>
+                                    <h6 className="mt-2">Devendo: {this.state.debito.total}</h6>
                                     <h6 className="mt-2">Lucro: R$ {this.state.lucro.total}</h6>
                                     <h6 className="mt-2">Total de vendas: {this.state.totalPedido.total}</h6>
                                     <h6 className="mt-2">Avaliação: {this.state.avaliacao.total}</h6>

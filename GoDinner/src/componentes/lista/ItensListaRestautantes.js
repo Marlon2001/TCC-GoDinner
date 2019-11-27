@@ -32,7 +32,6 @@ class ItensListaRestaurante extends Component{
                         </div>
                         <div className="col-md-2 mt-3 col-4 ">
                             <img src="img/icone/verde.png" className="rounded" alt=""/>
-                            <span className="ml-1">Débito</span>
                         </div>
                     </div>
                     <div className="row mt-5 mb-3">
