@@ -12,8 +12,6 @@ import './css/react-confirm-alert.css'; // Import css
 
 const socket = io('https://godinner.tk:3000');
 
-
-
 const initialState ={
                         dataSource:[]
                     }
@@ -22,7 +20,6 @@ class ChatSuporte extends Component{
     constructor(){
         super();
         this.state = { ...initialState }
-        this.enviarMensagem = enviarMensagem;
     }
 
     componentDidMount(){
@@ -31,13 +28,18 @@ class ChatSuporte extends Component{
             $("#top_chat").html(`Usuário: ${data.nome}`);
         });
 
-        $('.input_envia_msg').keypress(function (e) {
+        $('#campo_da_mensagem').keypress(function (e) {
             if (e.which == 13 || e.keyCode == 13) {
-                this.enviarMensagem();
+                let texto = $("#campo_da_mensagem").val().trim();
+                if(texto != ""){
+                    $("#campo_da_mensagem").val("");
+                    socket.emit('message', {username: "GoDinner", message:texto, remetente:"F" });
+                }
                 return false;
             }
         });
     }
+    
     verificarDesponibilidade(id){
         const option={
             title: 'Suporte',
