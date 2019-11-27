@@ -5,6 +5,8 @@ import {
     CorpoGraficos, IconeOpcoes
 } from './style/style';
 import { Bar, Line, Pie } from 'react-chartjs-2';
+import {DOMINIO, TOKEN} from '../link_config';
+import $ from 'jquery';
 
 
 
@@ -48,10 +50,22 @@ export class PaginaInicialAdm extends Component{
             }]
             },
 
-           /* arrecadacao:{
-                total:
-            }*/
+            arrecadacao:{
+                total: ''
+            },
 
+            restaurante:{
+                total: ''
+            },
+
+            consumidor:{
+                total: ''
+            },
+            
+            devedor:{
+                total: ''
+            }
+           
 
         }
       }
@@ -64,6 +78,83 @@ export class PaginaInicialAdm extends Component{
       }
 
 
+
+    componentDidMount() {
+        this.carregarArregadacao();
+        this.carregarRestauranteCadastrado ();
+        this.carregarConsumidorCadastrado();
+    }
+
+
+    carregarArregadacao (){
+
+        const url = `${DOMINIO}/pedidos/totalcomissao`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({arrecadacao:resposta});
+                console.log(resposta);
+                console.log("A cima");
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }
+
+    carregarRestauranteCadastrado (){
+
+        const url = `${DOMINIO}/restaurante/cadastrados`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({restaurante:resposta});
+                console.log(resposta);
+                console.log("A cima");
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }
+
+    carregarConsumidorCadastrado (){
+
+        const url = `${DOMINIO}/consumidor/cadastrados`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': TOKEN },
+            success: function (resposta) {
+
+                this.setState({consumidor:resposta});
+                console.log(resposta);
+                console.log("A cimaaaaaa");
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }
+
+
+
+    
     render(){
         return(
             <div className="container">
@@ -73,34 +164,34 @@ export class PaginaInicialAdm extends Component{
                     <div className="col-12 ">
                         <div className="row">
                             <div className="col-md-3 col-6 mb-2">
-                                <Card>
-                                    <Card.Header className="bg-primary text-white">Arrecadação</Card.Header>
+                                <Card className="text-center h6">
+                                    <Card.Header className="bg-primary text-white text-center ">Arrecadação da Godinner</Card.Header>
                                     <Card.Body>
-                                        <Card.Text></Card.Text>
+                                        <Card.Text>{this.state.arrecadacao.total}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-md-3 mb-2 col-6">
-                                <Card>
+                            <div className="col-md-3 mb-2 col-6 h6">
+                                <Card className="text-center">
                                     <Card.Header  className="bg-success text-white">Restaurantes devedores</Card.Header>
                                     <Card.Body>
                                         <Card.Text></Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-md-3 mb-2 col-6">
-                                <Card>
+                            <div className="col-md-3 mb-2 col-6 h6">
+                                <Card className="text-center">
                                     <Card.Header className="bg-info text-white">Restaurantes Cadastrados</Card.Header>
                                     <Card.Body>
-                                        <Card.Text></Card.Text>
+                                        <Card.Text>{this.state.restaurante.total}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
-                            <div className="col-md-3  mb-2 col-6">
-                                <Card>
+                            <div className="col-md-3  mb-2 col-6 h6">
+                                <Card className="text-center">
                                     <Card.Header className="bg-danger text-white">Consumidores cadastrados</Card.Header>
                                     <Card.Body>
-                                        <Card.Text></Card.Text>
+                                        <Card.Text>{this.state.consumidor.total}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
@@ -108,7 +199,7 @@ export class PaginaInicialAdm extends Component{
                     </div>
                 </div>
                <div className="row mt-3">
-                    <div className="col-6  pb-2">
+                    <div className="col-md-6 col-12  pb-2">
                             <Card  style={{ width: '100%', height: '380px' }}>
                                 <Card.Body>
                                    <div >
@@ -135,7 +226,7 @@ export class PaginaInicialAdm extends Component{
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col-6  pb-2">
+                    <div className="col-12 col-md-6  pb-2">
                         <Card   style={{ width: '100%', height: '380px' }}>
                             <Card.Body>
                             <Line
