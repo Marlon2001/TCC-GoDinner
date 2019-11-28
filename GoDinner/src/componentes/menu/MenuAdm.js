@@ -13,8 +13,6 @@ export class MenuAdm extends Component {
         //Limpa os storages
         localStorage.clear();
         sessionStorage.clear();
-
-        this.props.history.push("/cadastro/endereco");
     }
 
     componentDidMount() {
@@ -65,16 +63,11 @@ export class MenuAdm extends Component {
                             <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: 'rgb(76, 76, 76)' }}>
                                 <img className="border rounded-circle foto-restaurante  mr-1" src='' alt="" style={{ width: 65 + 'px', height: 60 + 'px' }} />
                             </Link>
-                            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <Link className="dropdown-item" >Editar Perfil</Link>
-                                <Link className="dropdown-item" >Configurações</Link>
-                                <div className="dropdown-divider"></div>
-                                <Link className="dropdown-item" >Outros</Link>
-                            </div>
                         </div>
-                        <button  to="/" className="btn border-bottom-laranja" onClick={e => this.apagarLocalStorage(e)}>
-                            Logout
-                        </button>
+                            <Link to="/" className="btn border-bottom-laranja" onClick={e => this.apagarLocalStorage(e)}>
+                                Logout
+                            </Link>
+                            
                     </form>
                 </div>
             </nav>

@@ -146,13 +146,13 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
         const { id } = this.props.match.params;
 
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/restaurante/${id}`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({restaurante:resposta});
@@ -178,16 +178,16 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
         const { id } = this.props.match.params;
 
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/restaurante/verificadebito/${id}`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
-                console.log(resposta);
-                console.log("A Cimaaaaaaaa")
+                console.log(resposta.total);
+                console.log("A Cimaaaaaaaa");
 
             }.bind(this),
             error: function (data) {
@@ -200,17 +200,16 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
     carregarLucro(){
         const { id } = this.props.match.params;
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/restaurante/saldorestaurante/${id}`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({lucro:resposta});
-                console.log(resposta);
 
 
             }.bind(this),
@@ -222,18 +221,16 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
     carregarAvaliacao(){
         const { id } = this.props.match.params;
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/avaliacao/mediarestaurante/${id}`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({avaliacao:resposta});
-                console.log(resposta);
-                console.log("A cima")
 
 
             }.bind(this),
@@ -245,18 +242,16 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
     carregarTotalPedido(){
         const { id } = this.props.match.params;
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/pedidos/pedidorestaurante/${id}`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({totalPedido:resposta});
-                console.log(resposta);
-                console.log("A cima");
 
 
             }.bind(this),
@@ -269,17 +264,16 @@ export class PaginaListaRestauranteDetalhe extends Component{
 
         const { id } = this.props.match.params;
 
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/categoriaproduto/categorias/${id}`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({categoria:resposta});
-                console.log(resposta);
 
 
             }.bind(this),
@@ -318,7 +312,7 @@ export class PaginaListaRestauranteDetalhe extends Component{
                             </div>
                             <div className="row mt-4 ">
                                 <div className="col-12">
-                                    {/* <h6 className="mt-2">Devendo: {this.state.debito.total}</h6> */}
+                                    <h6 className="mt-2">Devendo: {this.state.debito.total}</h6>
                                     <h6 className="mt-2">Lucro: R$ {this.state.lucro.total}</h6>
                                     <h6 className="mt-2">Total de vendas: {this.state.totalPedido.total}</h6>
                                     <h6 className="mt-2">Avaliação: {this.state.avaliacao.total}</h6>

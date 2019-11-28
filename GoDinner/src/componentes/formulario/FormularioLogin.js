@@ -65,6 +65,10 @@ class FormularioLogin extends Component{
             type: 'post',
             data: JSON.stringify({ "email": email, "password": password }),
             dataType: 'json',
+            beforeSend: function() {
+                // setting a timeout
+                alert("ksfkslçdk");
+            },
             contentType: "application/json",
 
             success: function (resposta) {

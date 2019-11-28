@@ -162,13 +162,13 @@ export class PaginaInicialAdm extends Component{
 
 
     carregarArregadacao (){
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/pedidos/totalcomissao`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({arrecadacao:resposta});
@@ -183,13 +183,13 @@ export class PaginaInicialAdm extends Component{
 
 
     carregarDevedores (){
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/restaurante/qtdedebito`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({devedor:resposta});
@@ -205,13 +205,13 @@ export class PaginaInicialAdm extends Component{
     }
 
     carregarRestauranteCadastrado (){
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/restaurante/cadastrados`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({restaurante:resposta});
@@ -225,13 +225,13 @@ export class PaginaInicialAdm extends Component{
     }
 
     carregarConsumidorCadastrado (){
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/consumidor/cadastrados`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({consumidor:resposta});
