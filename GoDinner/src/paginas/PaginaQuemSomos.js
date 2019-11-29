@@ -13,7 +13,7 @@ export class PaginaQuemSomos extends Component{
         return(
             <Fragment>
                 <div className="z-index">
-                    <PageProgress color={'rgb(255, 26, 26)'} height={5}/>
+                    <PageProgress color={'rgb(45, 45, 44)'} height={5}/>
                 </div>
                 <MenuInicial/>
                 <CabecalhoPrincipal  formatacao="pt-4 pb-4" titulo="Quem Somos" className="caixa-header-2" subtitulo="GoDinner - Conheça mais sobre nós"/>

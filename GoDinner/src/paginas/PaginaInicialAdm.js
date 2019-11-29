@@ -4,7 +4,7 @@ import {
     DivOpecoes, DivOpecoesTitulo, CabecalhoGraficos,
     CorpoGraficos, IconeOpcoes
 } from './style/style';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 import {DOMINIO, TOKEN} from '../link_config';
 import $ from 'jquery';
@@ -149,26 +149,50 @@ export class PaginaInicialAdm extends Component{
         });
     }
 
+
+
+
+
     componentDidMount() {
         this.carregarArregadacao();
         this.carregarRestauranteCadastrado ();
         this.carregarConsumidorCadastrado();
+        this.carregarDevedores();
     }
 
 
     carregarArregadacao (){
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/pedidos/totalcomissao`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({arrecadacao:resposta});
-                console.log(resposta);
-                console.log("A cima");
+
+
+            }.bind(this),
+            error: function (data) {
+
+            }
+        });
+    }
+
+
+    carregarDevedores (){
+        let token = localStorage.getItem("token")
+        const url = `${DOMINIO}/restaurante/qtdedebito`;
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            headers: { 'token': token },
+            success: function (resposta) {
+
+                this.setState({devedor:resposta});
 
 
             }.bind(this),
@@ -179,18 +203,16 @@ export class PaginaInicialAdm extends Component{
     }
 
     carregarRestauranteCadastrado (){
-
+        let token = localStorage.getItem("token")
         const url = `${DOMINIO}/restaurante/cadastrados`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({restaurante:resposta});
-                console.log(resposta);
-                console.log("A cima");
 
 
             }.bind(this),
@@ -201,18 +223,16 @@ export class PaginaInicialAdm extends Component{
     }
 
     carregarConsumidorCadastrado (){
-
+        let token = localStorage.getItem("token");
         const url = `${DOMINIO}/consumidor/cadastrados`;
 
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { 'token': TOKEN },
+            headers: { 'token': token },
             success: function (resposta) {
 
                 this.setState({consumidor:resposta});
-                console.log(resposta);
-                console.log("A cimaaaaaa");
 
 
             }.bind(this),
@@ -229,7 +249,7 @@ export class PaginaInicialAdm extends Component{
     render(){
         return(
             <div className="container">
-               <h1 className="text-center mt-5 mb-5">Bem-vindo ao sistema GoDinner</h1>
+                <h1 className="text-center mt-5 mb-5">Bem-vindo ao sistema GoDinner</h1>
                 <hr/>
                 <div className="row">
                     <div className="col-12 ">
@@ -246,7 +266,7 @@ export class PaginaInicialAdm extends Component{
                                 <Card className="text-center">
                                     <Card.Header  className="bg-success text-white">Restaurantes devedores</Card.Header>
                                     <Card.Body>
-                                        <Card.Text></Card.Text>
+                                        <Card.Text>{this.state.devedor.total}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </div>
@@ -282,7 +302,7 @@ export class PaginaInicialAdm extends Component{
                                     options={{
                                         title:{
                                         display:this.props.displayTitle,
-                                        text:'Restaurantes Cadastrados por mês',
+                                        text:'Restaurantes Cadastrados (mês)',
                                         fontSize:23
                                         },
                                         maintainAspectRatio: false,
@@ -308,7 +328,7 @@ export class PaginaInicialAdm extends Component{
                                     options={{
                                         title:{
                                         display:this.props.displayTitle,
-                                        text:'Arrecadação do mês',
+                                        text:'Arrecadação da Godinner (mês)',
                                         fontSize:23
                                         },
                                         maintainAspectRatio: false,

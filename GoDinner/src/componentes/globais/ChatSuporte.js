@@ -110,7 +110,7 @@ class ChatSuporte extends Component{
 
     render(){
         return(
-            <div className="caixa_chat" id="caixa_chat" >
+            <div className="caixa_chat " id="caixa_chat" >
                 <div className="top_chat justify-content-start text-light d-flex flex-rows" id="top_chat" onClick={() => this.abaixarLevantarChat()}>
                     <img className="ml-2" src={iconChat} alt="chat" style={{maxWidth: "35px"}}/>
                     <font className="ml-2">Chat</font>
