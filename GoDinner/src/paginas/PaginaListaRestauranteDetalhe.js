@@ -67,7 +67,8 @@ export class PaginaListaRestauranteDetalhe extends Component{
         this.carregarDadosRestaurante();
         this.carregarLucro();
         this.carregarAvaliacao();
-        this.carregarTotalPedido()
+        this.carregarTotalPedido();
+        this. carregarDebito();
         
        
     }
@@ -156,8 +157,6 @@ export class PaginaListaRestauranteDetalhe extends Component{
             success: function (resposta) {
 
                 this.setState({restaurante:resposta});
-                console.log(resposta);
-                console.log("FOTOO" + resposta.foto.length)
                 if (resposta.foto.length === 0) {
                     $(".foto-restaurante").attr("src", FOTORESTAURANTEPADRAO);
                 } else {
@@ -186,7 +185,6 @@ export class PaginaListaRestauranteDetalhe extends Component{
             type: 'GET',
             headers: { 'token': token },
             success: function (resposta) {
-                this.setState({debito:resposta})
             }.bind(this),
             error: function (data) {
                 console.log('Erro:', data);
@@ -250,7 +248,6 @@ export class PaginaListaRestauranteDetalhe extends Component{
             success: function (resposta) {
 
                 this.setState({totalPedido:resposta});
-                console.log(resposta);
 
 
             }.bind(this),
@@ -272,7 +269,6 @@ export class PaginaListaRestauranteDetalhe extends Component{
             headers: { 'token': token },
             success: function (resposta) {
                 this.setState({categoria:resposta});
-                console.log(resposta);
                
 
 

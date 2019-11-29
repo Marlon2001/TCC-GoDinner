@@ -29,9 +29,7 @@ export class SliderBox extends Component{
             url: url,
             type: 'GET',
             success: function (resposta) {
-                console.log(resposta[0].nome)
                 console.log(this.setState({ categorias: resposta }));
-                console.log(this.state.categorias);
 
             }.bind(this),
             error: function (resposta) {

@@ -46,7 +46,6 @@ export class PaginaListaRestaurante extends Component {
             success: function (resposta) {
 
                 this.setState({ itens: resposta, foto: resposta.foto });
-                console.log(resposta);
             }.bind(this),
             error: function (data) {
 
