@@ -65,10 +65,6 @@ class FormularioLogin extends Component{
             type: 'post',
             data: JSON.stringify({ "email": email, "password": password }),
             dataType: 'json',
-            beforeSend: function() {
-                // setting a timeout
-                alert("ksfkslçdk");
-            },
             contentType: "application/json",
 
             success: function (resposta) {
@@ -112,7 +108,7 @@ class FormularioLogin extends Component{
                         <div className="row">
                             <img src={Logo} className=" col-12 icone-imagem" alt="Logo GoDinner"/>
                         </div>
-                        <div className="row">
+                        <div className="row" id="testee">
                             <h3 className="mx-auto">Sistema GoDinner</h3>
                         </div>
                         {/* <!--Div de Cadastro--> */}
@@ -132,9 +128,9 @@ class FormularioLogin extends Component{
                         <div className="row mt-5 mb-5 ml-1 mr-1">
                             <span onClick={e => this.validaCampos(e)} className="btn btn-orange"  style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Entrar</span>
                         </div>  
-                        <div className="row mt-3 mb-5 ml-1 mr-1">
+                        {/* <div className="row mt-3 mb-5 ml-1 mr-1">
                             <a href="#" className="btn btn-orange " style={{ minWidth: 100 + '%', cursor: 'pointer' }}>Cadastrar</a>
-                        </div>
+                        </div> */}
                         <hr/>
                     </div>
                     <div className="col-1 col-md-2 col-lg-3"></div>

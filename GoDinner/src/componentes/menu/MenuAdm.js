@@ -8,6 +8,18 @@ import { withRouter, Link } from 'react-router-dom';
 
 export class MenuAdm extends Component {
 
+
+    constructor(props){
+        super();
+        this.state = {
+            funcionario:{
+                id: '',
+                nome: '',
+                email: ''
+            } 
+        }
+    }
+
     apagarLocalStorage() {
 
         //Limpa os storages
@@ -60,7 +72,7 @@ export class MenuAdm extends Component {
 
                     <form className="form-inline bg-light">
                         <div className="nav-item dropdown">
-                            <Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: 'rgb(76, 76, 76)' }}>
+                            <Link className="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: 'rgb(76, 76, 76)' }}>
                                 <img className="border rounded-circle foto-restaurante  mr-1" src='' alt="" style={{ width: 65 + 'px', height: 60 + 'px' }} />
                             </Link>
                         </div>

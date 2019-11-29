@@ -4,7 +4,7 @@ import {
     DivOpecoes, DivOpecoesTitulo, CabecalhoGraficos,
     CorpoGraficos, IconeOpcoes
 } from './style/style';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 
 import {DOMINIO, TOKEN} from '../link_config';
 import $ from 'jquery';
@@ -193,8 +193,6 @@ export class PaginaInicialAdm extends Component{
             success: function (resposta) {
 
                 this.setState({devedor:resposta});
-                console.log(resposta);
-                console.log("A cima");
 
 
             }.bind(this),
@@ -225,7 +223,7 @@ export class PaginaInicialAdm extends Component{
     }
 
     carregarConsumidorCadastrado (){
-        let token = localStorage.getItem("token")
+        let token = localStorage.getItem("token");
         const url = `${DOMINIO}/consumidor/cadastrados`;
 
         $.ajax({
@@ -251,7 +249,7 @@ export class PaginaInicialAdm extends Component{
     render(){
         return(
             <div className="container">
-               <h1 className="text-center mt-5 mb-5">Bem-vindo ao sistema GoDinner</h1>
+                <h1 className="text-center mt-5 mb-5">Bem-vindo ao sistema GoDinner</h1>
                 <hr/>
                 <div className="row">
                     <div className="col-12 ">
