@@ -9,8 +9,7 @@ import $ from "jquery"
 import {confirmAlert} from 'react-confirm-alert';
 import './css/react-confirm-alert.css'; // Import css
 
-
-const socket = io('https://godinner.tk:3000');
+const socket = io('http://godinner.tk:3000', {secure:false});
 
 const initialState ={
                         dataSource:[]
