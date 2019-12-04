@@ -1,9 +1,5 @@
 import React,{Component} from 'react';
 import { Card} from 'react-bootstrap';
-import {
-    DivOpecoes, DivOpecoesTitulo, CabecalhoGraficos,
-    CorpoGraficos, IconeOpcoes
-} from './style/style';
 import { Line } from 'react-chartjs-2';
 
 import {DOMINIO, TOKEN} from '../link_config';
@@ -11,6 +7,7 @@ import $ from 'jquery';
 
 
 
+const meses = ['JAN','FEV','MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
 
 export class PaginaInicialAdm extends Component{
 
@@ -18,12 +15,9 @@ export class PaginaInicialAdm extends Component{
         super(props);
         this.state = {
           chartData:{
-              labels:['JAN','FEV','MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
+              labels: meses,
               datasets:[{
                   label: 'Restaurantes cadastrados',
-
-                  //
-                  //setState(sata:[resposta.janereiro, resppsta.feveriro])
                   data:[],
                   backgroundColor:[
                       'rgba(242, 107, 58, 0.6)'
@@ -33,7 +27,7 @@ export class PaginaInicialAdm extends Component{
           
 
           chartData2:{
-            labels:['JAN','FEV','MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'],
+            labels: meses,
             datasets:[{
                 label: 'Arrecadação p/ mês em reais',
                 data:[],
@@ -65,8 +59,6 @@ export class PaginaInicialAdm extends Component{
         this.buscarArrecadacaoDoMes();
       }
       
-      
-    
       static defaultProps = {
         displayTitle:true,
         displayLegend: true,
