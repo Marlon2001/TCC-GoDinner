@@ -18,6 +18,7 @@ export class PaginaListaRestaurante extends Component {
 
     }
     visualizarRestaurante(e){
+        let token = localStorage.getItem('token');
 
         this.setState({ itens: [] });
 
@@ -39,7 +40,7 @@ export class PaginaListaRestaurante extends Component {
         $.ajax({
             url: url,
             type: 'GET',
-            headers: { "token": TOKEN },
+            headers: { "token": token },
             // dataType: 'json',
             contentType: 'application/json',
             
