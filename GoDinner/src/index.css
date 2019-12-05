@@ -86,7 +86,7 @@ code {
 }
 .desativado_btn_chat{
   background-color: rgb(170, 170, 170) !important;
-  color: black !important;
+  color: white !important;
 }
 .btn_enviar{
   bottom: 0;
