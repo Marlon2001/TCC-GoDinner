@@ -42,6 +42,7 @@ export class MenuAdm extends Component {
                     console.log(JSON.stringify(resposta));
                     localStorage.setItem("id", resposta.id);
                     localStorage.setItem("nome", resposta.nome);
+                    
 
                 }.bind(this),
                 
@@ -56,28 +57,29 @@ export class MenuAdm extends Component {
 
     render() {
         return (
+
             <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{ zIndex: '1' }}>
                 <Link className="navbar-brand logo"  to="/administracao-godinner">
                     <img src={Logo} style={{ maxWidth: '200px', marginTop: '-5px' }} alt="Logo GoDinner" />
                 </Link>
+                
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse bg-light" id="conteudoNavbarSuportado">
-                    <ul className="navbar-nav ml-auto bg-light">
+                    <ul className="navbar-nav ml-auto bg-light mr-5">
                         <Li className="nav-item menu" maxWidth="150px">
                             <Link className="nav-link text-secondary menu" to="/administracao-godinner/lista-restaurante" >Restaurantes</Link>
                         </Li>
+                        
                     </ul>
 
                     <form className="form-inline bg-light">
-                        <div className="nav-item dropdown">
-                            <Link className="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color: 'rgb(76, 76, 76)' }}>
-                                <img className="border rounded-circle foto-restaurante  mr-1" src='' alt="" style={{ width: 65 + 'px', height: 60 + 'px' }} />
-                            </Link>
-                        </div>
+                   
                             <Link to="/" className="btn border-bottom-laranja" onClick={e => this.apagarLocalStorage(e)}>
+                                
                                 Logout
+                               
                             </Link>
                             
                     </form>
